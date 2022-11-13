@@ -67,7 +67,7 @@
 }
 .slick-prev:hover,
 .slick-next:hover {
-  background-color: #c8a165;
+  background-color: var(--primary-color);
   color: white;
 }
 /* Custom dots */
@@ -92,7 +92,7 @@
   cursor: pointer;
 }
 .slick-dots .slick-active button {
-  background-color: #c8a165;
+  background-color: var(--primary-color);
 }
 /* Custom animation Slider */
 /* .slick-active .text {
@@ -167,7 +167,7 @@
   content: "";
   width: 50px;
   height: 3px;
-  background-color: #c87065;
+  background-color: var(--secondary-color);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);

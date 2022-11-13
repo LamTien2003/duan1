@@ -8,9 +8,13 @@
 a {
     text-decoration: none;
 }
-
-/* :root {
+ul,li {
+    list-style: none;
+}
+:root {
+    --primary-color: #c8a165;
+    --secondary-color: #c87065;
     --bg-header: #FFFFFF;
     --text-color-header: #666666;
     --hover: #C8A165;
-} */
+}
