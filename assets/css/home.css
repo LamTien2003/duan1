@@ -38,10 +38,16 @@
     cursor: pointer;
     padding: 15px 32px;
     font-size: 1.3rem;
+    align-self: center;
     color: #434343;
     font-weight: 400;
     background-color: #f0f0f0;
     border: 2px solid #cececd;
+    transition: all linear 0.3s;
+}
+.btn-shopping:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
 /* Custom arrow slick */
 .slick-prev,.slick-next {
@@ -95,9 +101,10 @@
   background-color: var(--primary-color);
 }
 /* Custom animation Slider */
-/* .slick-active .text {
-     animation: fadeInOut 0.35s;
+/* .slick-active .text .subtitle {
+  animation: fadeInOut linear 0.4s;
 } */
+
 
 .main {
   background-color: #f6f6f6;
@@ -121,7 +128,7 @@
   cursor: pointer;
 }
 .category .category-item:hover {
-  box-shadow: 1px 8px 15px rgb(0 0 0 / 12%);
+  box-shadow: var(--box-shadow);
 }
 .category .left {
   width: 40%;
@@ -157,7 +164,7 @@
   margin-bottom: 25px;
   padding-bottom: 22px;
   color: #444;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 900;
   line-height: 22px;
   text-align: center;
@@ -172,31 +179,85 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.product-list {
+  display: flex;
+}
+.product-item {
+  width: 25%;
+  padding: 15px 20px;
+  margin: 0 15px;
+  background-color: white;
+  transition: all linear 0.3s;
+}
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.product-item img {
+  width: 100%;
+}
+.product-name {
+  color: #434343;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.product-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.product-item .btn-addtocart {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 15px;
+  background-color: #f6f6f6;
+  color: #666;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: none;
+  transition: all linear 0.3s;
+  cursor: pointer;
+}
+.product-item:hover {
+  box-shadow: var(--box-shadow);
+}
+.product-item .btn-addtocart:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
 
+/* Brand Container */
+.brand-list {
+  display: flex;
+  align-self: center;
+  height: 100px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
 
-
-
+}
+.brand {
+  width: 25%;
+  margin: 0 15px;
+}
+.brand-link {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @keyframes fadeInOut {
-    0% {
+    from {
       opacity: 0;
-      transform: translateY(0%) ;
+      transform: translateY(-200%);
     }
-    25% {
-        opacity: 0.25;
-        transform: translateY(-12.5%);
-      }
   
-    50% {
-      opacity: 0.5;
-      transform: translateY(-25%) ;
-    }
-    75% {
-        opacity: 0.75;
-        transform: translateY(-37.5%);
-      }
-  
-    100% {
+    to {
       opacity: 1;
       transform: translateY(-50%) ;
     }

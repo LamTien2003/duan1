@@ -13,6 +13,9 @@ a {
 ul,li {
     list-style: none;
 }
+img {
+    object-fit: cover;
+}
 :root {
     --primary-color: #c8a165;
 
@@ -20,4 +23,5 @@ ul,li {
     --third-color: #FFFFFF;
     --text-color: #666666;
     --hover: #C8A165;
+    --box-shadow: 1px 25px 54px rgb(0 0 0 / 12%);
 }
