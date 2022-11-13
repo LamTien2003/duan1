@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html{
     font-size: 62.50%;
 }
 a {
@@ -13,8 +15,9 @@ ul,li {
 }
 :root {
     --primary-color: #c8a165;
+
     --secondary-color: #c87065;
-    --bg-header: #FFFFFF;
-    --text-color-header: #666666;
+    --third-color: #FFFFFF;
+    --text-color: #666666;
     --hover: #C8A165;
 }
