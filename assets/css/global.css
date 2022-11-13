@@ -8,3 +8,10 @@
 a {
     text-decoration: none;
 }
+ul,li {
+    list-style: none;
+}
+:root {
+    --primary-color: #c8a165;
+    --secondary-color: #c87065;
+}
