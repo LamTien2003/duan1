@@ -50,12 +50,18 @@
       <form action="/ProjectWeb/SoundMusicStore/admin/signup.php" method="post">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Full Name</span>
-            <input id="name" name="name" type="text" placeholder="Enter your name" required />
-          </div>
-          <div class="input-box">
             <span class="details">Username</span>
             <input id="user" name="user" type="text" placeholder="Enter your username" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <i class="eye eye-close fa-regular fa-eye-slash"></i>
+            <i class="eye  eye-open hidden  fa-regular fa-eye"></i>
+            <input id="pass" name="pass" class="input" type="password" placeholder="Enter your password" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required />
           </div>
           <div class="input-box">
             <span class="details">Email</span>
@@ -66,37 +72,13 @@
             <input id="tel" name="tel" type="text" placeholder="Enter your number" required />
           </div>
           <div class="input-box">
-            <span class="details">Password</span>
-            <i class="eye eye-close fa-regular fa-eye-slash"></i>
-            <i class="eye  eye-open hidden  fa-regular fa-eye"></i>
-            <input id="pass" name="pass" class="input" type="password" placeholder="Enter your password" required />
-          </div>
-          <div class="input-box">
             <span class="details">Address</span>
 
             <input id="address" name="address" class="input" type="text" placeholder="Enter your address" required />
           </div>
         </div>
         <!-- Gender -->
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-              <span class="dot one"> </span>
-              <span class="gender"> Male </span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"> </span>
-              <span class="gender"> Female </span>
-            </label>
-            <label for="dot-3">
-              <span class="dot three"> </span>
-              <span class="gender"> Prefer not to say </span>
-            </label>
-          </div>
+        
           <div class="container-btn-sm">
             <div class="sign-up-btn">
               <input id="register" name='register' type="submit" value="Sign Up">
