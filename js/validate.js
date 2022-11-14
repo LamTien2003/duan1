@@ -30,8 +30,8 @@ function validate() {
         }
         let inputs = form.querySelectorAll('input')
         inputs.forEach(input => {
-            switch (input.name) {
-                
+            console.log(input)
+            switch (input.name) {  
                 case "userName" : {
                     isClick? (check(form,0,50) ? undefined : isFormSubmit = false) : undefined
                     input.addEventListener('input', () => {   
@@ -62,6 +62,7 @@ function validate() {
 
 function check(form,min = 0,max = 100,regex = "",error = "Không được để trống") {
     const inputs = form.querySelectorAll('input')
+    console.log(inputs)
     const select = form.querySelector('select')
     let isChecked = false
     const mess = form.querySelector('.form-message')
@@ -89,7 +90,6 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
             }
             default: {
                 switch(input.name) {
-                    
                     case "userName" : {
                         if(input.value && input.value.match(regex) && input.value.length <= max && input.value.length >= min) {       
                             isChecked = true
@@ -106,7 +106,6 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
                         }
                         break;
                     }
-                    
                     default: {
                         if(input.value && input.value.match(regex) && input.value.length <= max && input.value.length >= min) {       
                             isChecked = true
@@ -122,10 +121,10 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
     })
     if(!isChecked) {
         mess.innerHTML = error
-        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'gold' : undefined
+        form.querySelector('input') ? form.querySelector('input').classList.add('invalid'): undefined
     }else {
         mess.innerHTML = ''
-        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'white' : undefined
+        form.querySelector('input') ? form.querySelector('input').classList.remove('invalid'): undefined
     }
     return isChecked
 }

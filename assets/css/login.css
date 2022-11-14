@@ -37,19 +37,25 @@ body {
 
 form .txt-filed {
   position: relative;
-  border-bottom: 2px solid aliceblue;
   margin: 30px 0px;
 }
 
 .txt-filed input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid aliceblue;
   color: aliceblue;
   width: 100%;
   padding: 0px 5px;
-  height: 40px;
+  margin: 6px 0;
+  height: 30px;
   font-size: 16px;
-  border: none;
   background: none;
   outline: none;
+}
+.txt-filed .invalid {
+  background-color: var(--primary-color);
 }
 
 .txt-filed label {
@@ -79,7 +85,7 @@ form .txt-filed {
   color: var(--primary-color);
 }
 .txt-filed input:focus ~ span::before,
-.txt-filed input:valid ~ span::before {
+.txt-filed input:invalid ~ span::before {
   width: 100%;
 }
 .link-pass a {
@@ -158,3 +164,11 @@ form .txt-filed {
   color: var(--primary-color);
 }
 
+/* Validate */
+.form-message {
+  font-size: 1.2rem;
+    line-height: 1rem;
+    padding: 4px 0 0;
+    color: #f33a58;
+    font-weight: bold;
+}
