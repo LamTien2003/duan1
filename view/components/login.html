@@ -41,15 +41,15 @@
   <body>
     <div class="login">
       <h1 class="lg-title"><i class="fa-solid fa-circle-user"></i></h1>
-      <form action="#">
+      <form action="#" class="form-group">
         <div class="txt-filed">
-          <input id="username" type="text" required />
-          <span></span>
+          <input id="username" type="text" class="form-control" name="username" />
+
           <label for=""> <i class="fa-solid fa-user"></i> Username </label>
         </div>
         <div class="txt-filed">
-          <input id="password" class="input" type="password" required />
-          <span></span>
+          <input id="password" class="input form-control" type="password" name="password"/>
+
           <i class="eye eye-close fa-regular fa-eye-slash"></i>
           <i class="eye eye-open hidden fa-regular fa-eye"></i>
           <label for=""> <i class="fa-solid fa-key"></i> Password </label>
@@ -60,7 +60,7 @@
           </a>
         </div>
 
-        <button onclick="checkLogin()" id="checklogin" class="btn-login">
+        <button id="checklogin" class="btn-login form-submit">
           <a href="#">Login</a>
         </button>
         <div class="signup-link">
@@ -71,4 +71,5 @@
     </div>
   </body>
   <script src="../js/login&signup.js"></script>
+  <script src="/js/validate.js"></script>
 </html>
