@@ -62,7 +62,8 @@
 /* Sub-header */
 
  .sub-header {
-
+  max-width: 1200px;
+  margin: auto;
   font-weight: 600;
   font-size: 1.7rem;
   display: flex;
@@ -71,8 +72,8 @@
 }
 
 .sub-header img{
-  width: 15rem;
-  object-fit: contain;
+  max-height: 97px;
+  object-fit: cover;
 }
 
 .fa-angle-down {
@@ -136,11 +137,10 @@
   text-decoration: none;
   color: var(--third-color);
   font-size: 1.5rem;
-
-  transition: padding 0.9 linear;
+  transition: all linear 0.2s;
 }
 .menu_child_list li a:hover {
-  padding: 1rem;
+  margin-left: 10px;
 }
 .menu_icon {
   list-style: none;
@@ -151,7 +151,7 @@
 }
 
 .menu_link:hover {
-  border-radius: 1rem;
+  border-radius: 6px;
   background-color: var(--hover);
   width: 300px;
   color: var(--third-color);
@@ -233,17 +233,19 @@
   margin-left: 2rem;
 }
 .search-box .search-txt {
-  position: relative;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-45%);
+  width: 0;
   background-color: var(--hover);
   border-radius: 1rem;
-  width: 0;
   transition: 0.5s;
 }
 
 .search-box .search-txt input {
   width: 100%;
   padding: 1rem;
-  padding-left: 60px;
   background: transparent;
   border: none;
   outline: none;
