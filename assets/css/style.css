@@ -10,13 +10,9 @@
     padding-bottom: 15px;
 }
 
-body {
-    /* color: #666; */
-    background-color: #f0f0f0;
-    font-family: Lato, sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 20px;
+body
+{
+    background-color: var(--bg-main);
 }
 
 div {
@@ -362,17 +358,29 @@ img {
 }
 
 .title-coupon {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 700;
     line-height: 28px;
     margin-bottom: 4%;
-    text-transform: uppercase !important;
+    text-transform: uppercase;
 }
 
-
+.nav-child h4{
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+.nav-child span{
+    font-size: 1.2rem;
+    color: #999;
+}
+.nav-child p{
+    margin-top: 15px;
+    font-size: 1.3rem;
+}
 .text-titile {
     color: #999;
 }
+
 
 input[type="text"] {
     background: #f6f6f6 none repeat scroll 0 0;
@@ -386,6 +394,9 @@ input[type="text"] {
     width: 100%;
     outline: none;
     margin: 5% 0;
+}
+.nav-child form{
+    font-size: 5rem;
 }
 
 .btn {
@@ -465,15 +476,24 @@ table {
     padding: 0 0 0 3%;
 }
 
-/* .product-price {
+.box > h3 {
+    font-size: 1.6rem;
+    line-height: 18px;
+    color: #434343;
+}
+
+.product-price {
 
     color: #c87065;
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
     padding: 1% 0 2% 0;
-} */
-
+}
+.procduct__des{
+    font-size: 1.4rem;
+    color: #66667F;
+}
 ul {
     list-style: outside none none;
 }
@@ -496,6 +516,8 @@ li:hover span.color {
     display: block;
     font-weight: 700;
     width: 55px;
+    font-size: 1.5rem;
+
 }
 
 .color-box {
@@ -527,6 +549,7 @@ span.size-title {
     display: inline-block;
     margin-right: 15px;
     font-weight: bold;
+    font-size: 1.3rem;
 }
 
 span.size-title:hover {
@@ -540,8 +563,14 @@ span.size-title:hover {
 .product-color {
     margin: 5% 0;
 }
-
+.product-box-btn{
+    margin-left: 20px;
+}
+.product-box-btn input[type="submit"]{
+    font-size: 1.5rem;
+}
 .product-box-btn input[type="number"] {
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -567,10 +596,15 @@ span.size-title:hover {
 .btn-slider {
     z-index: 999;
     cursor: pointer;
-    padding: 9% 0.5%;
+    padding: 8% 0.5%;
     background-color: #f0f0f0;
     /* margin: 50px 5px; */
 
+}
+
+.btn-slider i{
+    font-size: 1.3rem
+    ;
 }
 
 .btn-slider:hover {
