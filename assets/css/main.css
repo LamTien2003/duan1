@@ -3,14 +3,16 @@
 
 .cut-header {
   height: 1px;
-  background-color: #312f2f;
+  background-color: #dedbdb;
 }
 
 .top-header {
-  padding: 1rem 15rem 1rem;
+  padding: 10px 0;
   display: flex;
   background-color: var(--third-color);
   justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
   
 }
 
