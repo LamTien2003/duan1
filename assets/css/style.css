@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 
-}
 
 
 .pb-15 {
@@ -389,10 +384,11 @@ input[type="text"] {
 }
 
 .btn {
+    font-size: 1.6rem;
     border: none;
     padding: 10px 30px;
-    background-color: #c87065;
-    color: white;
+    background-color: #f6f6f6;
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -464,7 +460,19 @@ table {
     height: auto;
     padding: 0 0 0 3%;
 }
-
+.detailInforProduct .box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+.detailInforProduct .box .product-price {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+} 
+.detailInforProduct .box .product-description {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
 /* .product-price {
 
     color: #c87065;
@@ -535,6 +543,7 @@ span.size-title:hover {
 
 .product-btn {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .product-color {
@@ -542,6 +551,9 @@ span.size-title:hover {
 }
 
 .product-box-btn input[type="number"] {
+    background-color: #f6f6f6;
+    font-size: 1.6rem;
+    color: var(--text-color);
     text-align: center;
 }
 
