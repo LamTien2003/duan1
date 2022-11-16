@@ -124,7 +124,7 @@ ul {
     padding-top: 80px;
 }
 
-.single-product {
+.product-title-box {
     padding-top: 15px;
     transition: all .5s ease 0s;
 }
@@ -255,11 +255,11 @@ tr {
     vertical-align: middle;
 }
 
-.product-infor .single-product {
+.product-infor .product-title-box {
     padding-top: 0;
 }
 
-.single-product {
+.product-title-box {
     padding-top: 15px;
     transition: all .5s ease 0s;
 }
@@ -465,14 +465,14 @@ table {
     padding: 0 0 0 3%;
 }
 
-.product-price {
+/* .product-price {
 
     color: #c87065;
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
     padding: 1% 0 2% 0;
-}
+} */
 
 ul {
     list-style: outside none none;
