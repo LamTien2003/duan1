@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 
-}
 
 
 .pb-15 {
@@ -400,10 +395,11 @@ input[type="text"] {
 }
 
 .btn {
+    font-size: 1.6rem;
     border: none;
     padding: 10px 30px;
-    background-color: #c87065;
-    color: white;
+    background-color: #f6f6f6;
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -475,14 +471,20 @@ table {
     height: auto;
     padding: 0 0 0 3%;
 }
-
-.box > h3 {
+.detailInforProduct .box h3 {
     font-size: 1.6rem;
-    line-height: 18px;
-    color: #434343;
+    margin-bottom: 10px;
 }
-
-.product-price {
+.detailInforProduct .box .product-price {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+} 
+.detailInforProduct .box .product-description {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+/* .product-price {
 
     color: #c87065;
     font-size: 18px;
@@ -558,6 +560,7 @@ span.size-title:hover {
 
 .product-btn {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .product-color {
@@ -570,7 +573,9 @@ span.size-title:hover {
     font-size: 1.5rem;
 }
 .product-box-btn input[type="number"] {
-    font-size: 1.5rem;
+    background-color: #f6f6f6;
+    font-size: 1.6rem;
+    color: var(--text-color);
     text-align: center;
 }
 
@@ -600,7 +605,7 @@ span.size-title:hover {
     background-color: #f0f0f0;
     /* margin: 50px 5px; */
 
-}
+
 
 .btn-slider i{
     font-size: 1.3rem
