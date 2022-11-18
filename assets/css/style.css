@@ -163,7 +163,7 @@ ul {
     padding: 1% 11%;
 }
 
-.nav .nav-box {
+.nav-box {
     display: flex;
     max-width: 100%;
     background-color: white;

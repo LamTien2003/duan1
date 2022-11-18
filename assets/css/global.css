@@ -19,7 +19,6 @@ img {
 }
 :root {
     --primary-color: #c8a165;
-
     --secondary-color: #c87065;
     --third-color: #FFFFFF;
     --text-color: #666666;
@@ -27,4 +26,5 @@ img {
     --box-shadow: 1px 25px 54px rgb(0 0 0 / 12%);
     --bg-footer: #eee;
     --bg-main:#F6F6F6;
+    
 }
