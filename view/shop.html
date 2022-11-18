@@ -26,17 +26,14 @@
       <h3 class="title">SHOP</h3>
     </div>
     <div class="container-shop">
-      <div class="container-shop-left">
-        <div class="container-item">
+      <form action="#" method="post" class="container-shop-left">
+        <form class="container-item">
           <div class="container-search">
-            <form action="#" method="post">
               <input type="text" placeholder="Search here..." />
               <button type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
-            </form>
           </div>
-        </div>
         <div class="container-item">
           <div class="container-categories">
             <div class="title-shop-left">CATEGORIES</div>
@@ -65,7 +62,14 @@
             <div class="title-shop-left">PRICE</div>
             <div class="price-amount">
               <h5>You ranger: </h5>
-              <span>50$-1773$</span>
+              <div class="section-item fillter">
+                <input class="range" type="range" name ="range" min="0" max="10000000" value="10" step="10000"
+                    onmousemove="rangevalue1.value=nf.format(value)" />
+                <div class="price-fillter">
+                    <output id="rangevalue">0</output>
+                    <output id="rangevalue1">0</output>
+                </div>
+              </div>
             </div>
             <div class="filter-ranger">
 
@@ -92,7 +96,7 @@
             
           </div>
         </div>
-      </div>
+      </form>
       <div class="container-shop-right">
         <div class="top-shop">
           <div class="option-top-shop">
