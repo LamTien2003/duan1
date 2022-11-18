@@ -1,3 +1,6 @@
+
+
+
 .pb-15 {
     padding-bottom: 15px;
 }
@@ -151,7 +154,7 @@ ul {
     padding: 1% 11%;
 }
 
-.nav .nav-box {
+.nav-box {
     display: flex;
     max-width: 100%;
     background-color: white;
@@ -168,7 +171,7 @@ ul {
 .nav-mid {
     width: 3%;
     height: auto;
-    background-color: #f0f0f0;
+    background-color: #f6f6f6;
 }
 
 form {
@@ -223,6 +226,7 @@ tr {
 }
 
 .table-content table th {
+    font-size: 1.2rem;
     background: #f6f6f6 none repeat scroll 0 0;
     font-weight: 700;
     padding: 10px 10px;
@@ -263,14 +267,23 @@ tr {
     /* position: relative; */
 }
 
-.product-remove a:hover {
+.product-remove i:hover {
     color: white;
     background-color: #c8a165;
 }
 
 .product-remove a {
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
     background: #f6f6f6 none repeat scroll 0 0;
+    transition: all .3s ease 0s;
+}
+.product-remove i {
+    background: #f6f6f6 none repeat scroll 0 0;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
     transition: all .3s ease 0s;
 }
 
@@ -289,11 +302,14 @@ img {
 }
 
 .product-infor .post-title {
-    font-size: 14px;
+    /* font-size: 14px; */
+    font-size: 2rem;
+
 }
 
 .post-title {
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 1.6rem;
     line-height: 18px;
     text-transform: uppercase;
     font-family: bree serif;
@@ -386,13 +402,18 @@ input[type="text"] {
     width: 100%;
     outline: none;
     margin: 5% 0;
+    font-size: 1.6rem;
+
+}
+input[type="number"] {
+    font-size: 1.6rem;
 }
 .nav-child form{
     font-size: 5rem;
 }
 
 .btn {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border: none;
     padding: 10px 30px;
     background-color: #f6f6f6;
@@ -613,6 +634,10 @@ span.size-title:hover {
     color: white;
     background-color: #c38b4b;
 
+}
+.color-btn{
+    background-color: #c87065;
+    color: white;
 }
 
 .btn-right {
