@@ -484,7 +484,7 @@ table {
     font-size: 1.3rem;
     font-weight: 400;
 }
-/* .product-price {
+.product-price {
 
     color: #c87065;
     font-size: 18px;
@@ -494,7 +494,7 @@ table {
 }
 .procduct__des{
     font-size: 1.4rem;
-    color: #66667F;
+    color: var(--text-color);
 }
 ul {
     list-style: outside none none;
@@ -560,7 +560,7 @@ span.size-title:hover {
 
 .product-btn {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .product-color {
@@ -571,6 +571,7 @@ span.size-title:hover {
 }
 .product-box-btn input[type="submit"]{
     font-size: 1.5rem;
+    border: 2px solid #999;
 }
 .product-box-btn input[type="number"] {
     background-color: #f6f6f6;
@@ -603,8 +604,7 @@ span.size-title:hover {
     cursor: pointer;
     padding: 8% 0.5%;
     background-color: #f0f0f0;
-    /* margin: 50px 5px; */
-
+}
 
 
 .btn-slider i{
