@@ -22,14 +22,14 @@ body {
 }
 
 .login h1 {
-  font-size: 50px;
-  color: aliceblue;
   text-align: center;
-  padding: 0 0 30px 0;
+  padding: 20px ;
   border-bottom: 1px solid aliceblue;
   color: var(--primary-color);
 }
-
+.login i{
+  font-size: 4rem;
+}
 .login form {
   padding: 0 40px;
   box-sizing: border-box;
@@ -88,6 +88,9 @@ form .txt-filed {
 .txt-filed input:invalid ~ span::before {
   width: 100%;
 }
+.txt-filed i{
+  font-size: 1.2rem;
+}
 .link-pass a {
   text-decoration: none;
   color: aliceblue;
@@ -135,6 +138,7 @@ form .txt-filed {
 .signup-link a {
   color: var(--primary-color);
   text-decoration: none;
+  font-size: 1.6rem;
 }
 
 .signup-link a:hover {
@@ -154,6 +158,10 @@ form .txt-filed {
 }
 .hidden {
   display: none !important;
+}
+button a{
+  font-size: 1.9rem;
+  color: var(--third-color);
 }
 /* Clock Canvas */
 .container-canvas {

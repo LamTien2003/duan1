@@ -161,6 +161,10 @@
   .eye:hover {
     color: var(--primary-color);
   }
+
+  .input-box .eye-close,.input-box .eye-open{
+    font-size: 1.4rem;
+  }
   .hidden{
       display: none !important;
   }
