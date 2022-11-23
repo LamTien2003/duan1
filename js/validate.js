@@ -30,8 +30,53 @@ function validate() {
         }
         let inputs = form.querySelectorAll('input')
         inputs.forEach(input => {
-            console.log(input)
-            switch (input.name) {  
+            switch (input.name) {
+                case "price": {
+                    // NEU CHECK RETURN FALSE THI` GAN' ISFORM = FALSE
+                    isClick ? (check(form, 0, Infinity, /[0-9]/, "Đơn giá phải là kiểu số và lớn hơn 0") ? undefined : isFormSubmit = false) : undefined
+                    input.addEventListener('input', () => {
+                        check(form, 0, Infinity, /[0-9]/, "Đơn giá phải là kiểu số và lớn hơn 0")
+                    })
+                    break;
+                }
+                case "tonkho": {
+                    // NEU CHECK RETURN FALSE THI` GAN' ISFORM = FALSE
+                    isClick ? (check(form, 0, Infinity, /[0-9]/, "Số lượng tồn kho phải là kiểu số và lớn hơn 0") ? undefined : isFormSubmit = false) : undefined
+                    input.addEventListener('input', () => {
+                        check(form, 0, Infinity, /[0-9]/, "Số lượng tồn kho phải là kiểu số và lớn hơn 0")
+                    })
+                    break;
+                }
+                case "daban": {
+                    // NEU CHECK RETURN FALSE THI` GAN' ISFORM = FALSE
+                    isClick ? (check(form, 0, Infinity, /[0-9]/, "Số lượng đã bán phải là kiểu số và lớn hơn 0") ? undefined : isFormSubmit = false) : undefined
+                    input.addEventListener('input', () => {
+                        check(form, 0, Infinity, /[0-9]/, "Số lượng đã bán phải là kiểu số và lớn hơn 0")
+                    })
+                    break;
+                }
+                case "mssv" : {
+                        // NEU CHECK RETURN FALSE THI` GAN' ISFORM = FALSE
+                    isClick ? (check(form,0,7,/(ps|PS)[0-9]{5}/,"MSSV phải có đúng 7 kí tự") ? undefined : isFormSubmit = false ) : undefined
+                    input.addEventListener('input', () => {   
+                        check(form,0,7,/(ps|PS)[0-9]{5}/,"MSSV phải có đúng 7 kí tự")
+                    })
+                    break;
+                }
+                case "email" : {
+                    isClick ? (check(form,0,100,/^[^\s@]+@[^\s@]+\.[^\s@]+$/,"Vui lòng nhập đúng Email") ? undefined : isFormSubmit = false) : undefined
+                    input.addEventListener('input', () => {   
+                        check(form,0,100,/^[^\s@]+@[^\s@]+\.[^\s@]+$/,"Vui lòng nhập đúng Email")
+                    })
+                    break;
+                }
+                case "fullname" : {
+                    isClick? (check(form,0,30) ? undefined : isFormSubmit = false) : undefined
+                    input.addEventListener('input', () => {   
+                        check(form,0,30)
+                    })
+                    break;
+                }
                 case "userName" : {
                     isClick? (check(form,0,50) ? undefined : isFormSubmit = false) : undefined
                     input.addEventListener('input', () => {   
@@ -46,7 +91,14 @@ function validate() {
                     })
                     break;
                 }
-                
+                case "phone" : {
+                    isClick ? (check(form,0,100,/(84|0[3|5|7|8|9])+([0-9]{8})\b/,"Vui lòng nhập đúng Số điện thoại") ? undefined : isFormSubmit = false) : undefined
+                    input.addEventListener('input', () => {   
+                        check(form,0,100,/(84|0[3|5|7|8|9])+([0-9]{8})\b/,"Vui lòng nhập đúng Số điện thoại")
+                    })
+                    break;
+                }
+                case "description" : break;
                 default: {
                     isClick? (check(form) ? undefined : isFormSubmit = false) : undefined
                     input.addEventListener('input', () => {
@@ -62,7 +114,6 @@ function validate() {
 
 function check(form,min = 0,max = 100,regex = "",error = "Không được để trống") {
     const inputs = form.querySelectorAll('input')
-    console.log(inputs)
     const select = form.querySelector('select')
     let isChecked = false
     const mess = form.querySelector('.form-message')
@@ -90,6 +141,71 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
             }
             default: {
                 switch(input.name) {
+                    case "price": {
+                        if (input.value && input.value.match(regex) && input.value.length <= max && input.value.length > min && input.value > 0) {
+                            isChecked = true
+                        }else {
+                            input.value.length == 0 ? error = "Không được để trống" : undefined
+                        }
+                        break;
+                    }
+                    case "tonkho": {
+                        if (input.value && input.value.match(regex) && input.value.length <= max && input.value.length > min && input.value > 0) {
+                            isChecked = true
+                        }else {
+                            input.value.length == 0 ? error = "Không được để trống" : undefined
+                        }
+                        break;
+                    }
+                    case "daban": {
+                        if (input.value && input.value.match(regex) && input.value.length <= max && input.value.length > min && input.value > 0) {
+                            isChecked = true
+                        }else {
+                            input.value.length == 0 ? error = "Không được để trống" : undefined
+                        }
+                        break;
+                    }
+                    case "mssv" : {
+                        if(input.value && input.value.match(regex) && input.value.length == max && input.value.length >= min ) {
+                            isChecked = true
+                        }else if (input.value && !input.value.match(regex) && input.value.length == max && input.value.length >= min) {
+                            error = "Đã đủ 7 kí tự nhưng không đúng dịnh dạng"
+                        }
+                        else {
+                            input.value.length == 0 ? error = "Không được để trống" : undefined
+                        }
+                        break;
+                    }
+                    case "email" : {
+                        if(input.value && input.value.match(regex) && input.value.length <= max && input.value.length >= min) {       
+                            isChecked = true
+                        }else if(input.value && !input.value.match(regex) && input.value.length <= max && input.value.length >= min) {
+                            undefined
+                        }
+                        else {
+                            input.value.length == 0 ? error = "Không được để trống" : undefined
+                        }
+                        break;
+                    }
+                    case "phone" : {
+                        if(input.value && input.value.match(regex) && input.value.length <= max && input.value.length >= min) {       
+                            isChecked = true
+                        }else if(input.value && !input.value.match(regex) && input.value.length <= max && input.value.length >= min) {
+                            undefined
+                        }
+                        else {
+                            input.value.length == 0 ? error = "Không được để trống" : undefined
+                        }
+                        break;
+                    }
+                    case "fullname" : {
+                        if(input.value && input.value.match(regex) && input.value.length <= max && input.value.length >= min) {       
+                            isChecked = true
+                        }else {
+                            input.value.length == 0 ? undefined : error = `Chỉ có thể nhập dưới ${max} kí tự`
+                        }
+                        break;
+                    }
                     case "userName" : {
                         if(input.value && input.value.match(regex) && input.value.length <= max && input.value.length >= min) {       
                             isChecked = true
@@ -103,6 +219,20 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
                             isChecked = true
                         }else {
                             input.value.length == 0 ? undefined : error = `Mật khẩu chỉ có thể nhập dưới ${max} kí tự`
+                        }
+                        break;
+                    }
+                    case "passwordAgain" : {
+                        let password = document.querySelector('input[name="password"]').value
+                        if(input.value && password && input.value === password ) {       
+                            console.log(1)
+                            isChecked = true
+                        }else if(!input.value && !password ) {
+                            console.log(2)
+                            error = `Không được để trống`
+                        }else {
+                            console.log(3)
+                            error = `Mật khẩu không trùng khớp`
                         }
                         break;
                     }
@@ -121,10 +251,10 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
     })
     if(!isChecked) {
         mess.innerHTML = error
-        form.querySelector('input') ? form.querySelector('input').classList.add('invalid'): undefined
+        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'gold' : undefined
     }else {
         mess.innerHTML = ''
-        form.querySelector('input') ? form.querySelector('input').classList.remove('invalid'): undefined
+        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'white' : undefined
     }
     return isChecked
 }

@@ -1,0 +1,114 @@
+
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    padding: 120px 160px ;
+    justify-content: space-between;
+    background-color: var(--bg-footer);
+  }
+  .single-footer:nth-child(1){
+    flex: 2;
+  }
+  .single-footer:nth-child(2){
+    flex: 1;
+  }
+  .single-footer:nth-child(3){
+    flex: 1;
+  }
+  .single-footer:nth-child(4){
+    flex: 2;
+  }
+  
+  .single-footer:not(:last-child){
+    margin-right: 3rem;
+  }
+  
+  .footer-title{
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+      text-transform: uppercase;
+      position: relative;
+  }
+  
+  .footer-title::before{
+    position: absolute;
+      content: "";
+      width: 5rem;
+      height: 0.2rem;
+      background-color: var(--secondary-color);
+      bottom: 0;
+      left: 0;
+  }
+  
+  .footer-contact ul li span{
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 3rem;
+  }
+  
+  
+  .footer-contact ul li{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-accounts ul li a,.footer-shipping ul li a{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+  }
+  
+  .footer-accounts ul li a:hover,.footer-shipping ul li a:hover{
+    color: var(--primary-color);
+  }
+  .footer-shipping ul li a,.footer-accounts ul li a{
+  color: #666;
+  }
+   
+  
+  
+  .footer-subscribe form{
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .footer-subscribe input[type=text]{
+    background: #f6f6f6 none repeat scroll 0 0;
+    border: medium none;
+    box-shadow: none;
+    color: #999;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 0 20px;
+    transition: all 0.5s ease 0s;
+    width: 100%;
+    outline: none;
+    font-size: 1.4rem;
+  }
+  
+  .footer-subscribe button[type=submit]{
+    background: #f6f6f6 none repeat scroll 0 0;
+    border: medium none;
+    box-shadow: none;
+    color: #999;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    padding: 0 2rem;
+    transition: all 0.5s ease 0s;
+    width: 50%;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  
+  .footer-subscribe button[type=submit]:hover{
+    background-color: var(--primary-color);
+    color: var(--third-color);
+  }

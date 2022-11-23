@@ -1,46 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <!-- Logo Favicon -->
-    <link
-      rel="icon"
-      href="../../assets/images/fuho_logo.png"
-      type="image/gif"
-      sizes="20x20"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/global.css" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <title>FUHO - SHOP</title>
-  </head>
-  <body>
+
     <header>
       <!-- Begin Sub-Header -->
       <div class="sub-header">
         <div class="sub-header-img">
-          <img src="/assets/images/fuho_logo.png" alt="" class="logo" />
+          <img src="./assets/images/fuho_logo.png" alt="" class="logo" />
         </div>
         <!-- Menu Bar --> 
         <label for="menu-mobile-input" class="menu_bar_btn">
@@ -171,26 +134,15 @@
         <ul class="menu">
           <li class="menu_item">
             <a href="" class="menu_link active-button"
-              >Home<i class="fa-solid fa-angle-down"></i
-            ></a>
-            <div class="menu_child">
-              <div class="menu_child_item">
-                <ul class="menu_child_list">
-                  <li><a href="">Home1</a></li>
-                  <li><a href="">Home2</a></li>
-                  <li><a href="">Home3</a></li>
-                </ul>
-              </div>
-            </div>
+              >Trang chủ
+            </a>
           </li>
 
-          <li class="menu_item">
-            <a href="" class="menu_link">DJ & Karaoke</a>
-          </li>
+          
 
           <li class="menu_item">
             <a href="" class="menu_link"
-              >Band & Orchestra<i class="fa-solid fa-angle-down"></i
+              >Cửa hàng<i class="fa-solid fa-angle-down"></i
             ></a>
             <div class="menu_child">
               <div class="menu_child_item">
@@ -204,19 +156,22 @@
               </div>
             </div>
           </li>
-
           <li class="menu_item">
-            <a href="" class="menu_link">DJ & Karaoke</a>
+            <a href="index.php?quanly=cuahang" class="menu_link">Khuyến mãi</a>
+          </li>
+          <li class="menu_item">
+            <a href="" class="menu_link">Giỏ hàng</a>
           </li>
 
           <li class="menu_item">
-            <a href="" class="menu_link">DJ & Karaoke</a>
+            <a href="" class="menu_link">Giới thiệu</a>
           </li>
 
-          <li class="menu_item"><a href="" class="menu_link">Sale</a></li>
-
-          <div class="icon">
-            <li class="menu_icon">
+          
+        </ul>
+        <div class="icon-list">
+        <div class="icon">
+            <div class="menu_icon">
               <a href="#" class="">
                 <!-- Cart Layout -->
                 <div class="header-cart">
@@ -268,27 +223,24 @@
                   </div>
                 </div>
               </a>
-            </li>
+            </div>
           </div>
           
 
           <div class="icon">
-            <li class="menu_icon">
-              <div class="search-box">
-                <div class="search-txt">
-                  <input type="text" placeholder="Search..." />
-                </div>
-                <div class="search-btn">
-                  <a href="" class="menu_link"
-                    ><i class="fa-solid fa-magnifying-glass"></i
-                  ></a>
-                </div>
-              </div>
-            </li>
+            <div class="search-btn">
+              <a href="#" class="menu_link"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+              <div class="search-txt">
+                <input type="text" placeholder="Search..." />
+              </div> 
+            </div>   
           </div>
-        </ul>
+          <div class="icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
       </div>
       <!-- End Sub-Header -->
-    </header>
-  </body>
-</html>
+</header>

@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
-    <link rel="stylesheet" href="../../assets/css/global.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <!-- Logo Favicon -->
-    <link
-      rel="icon"
-      href="../../assets/images/fuho_logo.png"
-      type="image/gif"
-      sizes="20x20"
-    />
-    <link rel="stylesheet" href="/assets/css/home.css" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <title>FUHO - SHOP</title>
-  </head>
-  <body>
+
     <footer>
       <div class="single-footer">
         <div class="footer-title">CONTACT US</div>
@@ -109,5 +71,3 @@
         </div>
       </div>
     </footer>
-  </body>
-</html>
