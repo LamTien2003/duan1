@@ -12,3 +12,5 @@ function debounce(func, delay) {
         }, delay);
     };
 }
+ export default debounce;
+
