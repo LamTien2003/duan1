@@ -1,7 +1,9 @@
 body {
   background-color: var(--bg-main);
 }
-
+header{
+  background-color: var(--third-color);
+}
 .banner {
   position: relative;
   background: rgba(0, 0, 0, 0) url(../images/banner\ about.webp) no-repeat

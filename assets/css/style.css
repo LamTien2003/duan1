@@ -9,7 +9,9 @@ body
 {
     background-color: var(--bg-main);
 }
-
+header{
+    background-color: var(--third-color);
+}
 div {
     display: block;
 }
