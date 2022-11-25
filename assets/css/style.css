@@ -390,7 +390,7 @@ img {
 }
 
 
-input[type="text"] {
+.coupon {
     background: #f6f6f6 none repeat scroll 0 0;
     border: medium none;
     box-shadow: none;
@@ -403,7 +403,6 @@ input[type="text"] {
     outline: none;
     margin: 5% 0;
     font-size: 1.6rem;
-
 }
 input[type="number"] {
     font-size: 1.6rem;
