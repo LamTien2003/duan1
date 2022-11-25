@@ -133,7 +133,7 @@
         <!-- Menu PC -->
         <ul class="menu">
           <li class="menu_item">
-            <a href="" class="menu_link active-button"
+            <a href="index.php" class="menu_link active-button"
               >Trang chủ
             </a>
           </li>
@@ -141,7 +141,7 @@
           
 
           <li class="menu_item">
-            <a href="" class="menu_link"
+            <a href="index.php?quanly=cuahang" class="menu_link"
               >Cửa hàng<i class="fa-solid fa-angle-down"></i
             ></a>
             <div class="menu_child">
@@ -160,11 +160,11 @@
             <a href="index.php?quanly=cuahang" class="menu_link">Khuyến mãi</a>
           </li>
           <li class="menu_item">
-            <a href="" class="menu_link">Giỏ hàng</a>
+            <a href="index.php?quanly=giohang" class="menu_link">Giỏ hàng</a>
           </li>
 
           <li class="menu_item">
-            <a href="" class="menu_link">Giới thiệu</a>
+            <a href="index.php?quanly=gioithieu" class="menu_link">Giới thiệu</a>
           </li>
 
           

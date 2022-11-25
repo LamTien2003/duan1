@@ -4,7 +4,7 @@ body {
 
 .banner {
   position: relative;
-  background: rgba(0, 0, 0, 0) url(/assets/images/banner\ about.webp) no-repeat
+  background: rgba(0, 0, 0, 0) url(../images/banner\ about.webp) no-repeat
     scroll center center/cover;
   padding-top: 20%;
 }

@@ -28,8 +28,14 @@ session_start();
                         echo '<link rel="stylesheet" href="./assets/css/admin.css">';
                         echo '<link rel="stylesheet" href="./assets/css/components/form.css">';
                     break;
-                    case 'shop': 
-                        echo '<link rel="stylesheet" href="./assets/css/main.css">';
+                    case 'cuahang': 
+                        echo '<link rel="stylesheet" href="./assets/css/shop.css">';
+                    break;
+                    case 'giohang': 
+                        echo '<link rel="stylesheet" href="./assets/css/style.css">';
+                    break;
+                    case 'gioithieu': 
+                        echo '<link rel="stylesheet" href="./assets/css/about.css">';
                     break;
                 
             }
@@ -45,8 +51,9 @@ session_start();
   ( isset($_GET['quanly']) && $_GET['quanly'] == 'admin' ) ? '' : include_once './view/components/header.php';
   if(isset($_GET['quanly'])) {
       switch($_GET['quanly']) {
-          case 'danhmuc': include_once './view/shop.php'; break; 
+          case 'cuahang': include_once './view/shop.php'; break; 
           case 'gioithieu': include_once './view/about.php'; break; 
+          case 'giohang': include_once './view/shoppingcart.php'; break; 
           case 'admin': include_once './view/admin/admin.php'; break; 
       }
   }else {

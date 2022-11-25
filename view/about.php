@@ -1,26 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/about.css">
-    <title>Document</title>
-</head>
-<body>
-    <div style="height: 97px;">Header</div>
+
     <div class="banner">
         <h3 class="title">ABOUT US</h3>
     </div>
     <div class="main">
         <div class="about-content-container">
             <div class="container introduce-container">
-                <img src="/assets/images/about img.webp" alt="">
+                <img src="assets/images/about img.webp" alt="">
                 <div class="introduce">
                     <h4>ABOUT HURST</h4>
                     <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn aliqua. Ut enim ad minim veniam, ommodo consequa. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia is be deserunt mollit anim id est laborum.</p>
@@ -34,7 +19,7 @@
                 <h2 class="title">Team Members</h2>
                 <div class="member-list">
                     <div class="member-item">
-                        <img src="/assets/images/lamtien.jpg" alt="" class="avatar">
+                        <img src="assets/images/lamtien.jpg" alt="" class="avatar">
                         <h4 class="name">Lâm Thành Tiến</h4>
                         <p class="position">Chức vụ: Vua</p>
                         <p class="description">There are many variations of passage of Lorem Ipsum available, but the in majority have suffered.</p>
@@ -51,7 +36,7 @@
                         </div>
                     </div>
                     <div class="member-item">
-                        <img src="/assets/images/lamtien.jpg" alt="" class="avatar">
+                        <img src="assets/images/lamtien.jpg" alt="" class="avatar">
                         <h4 class="name">Lâm Thành Tiến</h4>
                         <p class="position">Chức vụ: Vua</p>
                         <p class="description">There are many variations of passage of Lorem Ipsum available, but the in majority have suffered.</p>
@@ -68,7 +53,7 @@
                         </div>
                     </div>
                     <div class="member-item">
-                        <img src="/assets/images/lamtien.jpg" alt="" class="avatar">
+                        <img src="assets/images/lamtien.jpg" alt="" class="avatar">
                         <h4 class="name">Lâm Thành Tiến</h4>
                         <p class="position">Chức vụ: Vua</p>
                         <p class="description">There are many variations of passage of Lorem Ipsum available, but the in majority have suffered.</p>
@@ -89,5 +74,3 @@
         </div>
 
     </div>
-</body>
-</html>
