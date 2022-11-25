@@ -13,7 +13,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
+.logo {
+  max-width: 200px;
+  object-fit: cover;
+}
 .container {
   position: relative;
   width: 100%;
@@ -94,6 +97,7 @@ body {
 .navigation ul li:nth-child(1) {
   /* margin-bottom: 40px; */
   pointer-events: none;
+  text-align: center;
 }
 
 .navigation ul li a {

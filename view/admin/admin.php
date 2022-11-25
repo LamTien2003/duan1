@@ -12,19 +12,8 @@
     <div class="navigation">
         <ul>
             <li>
-                <a href="#">
-                    <!-- <span class="icon">
-                        <ion-icon name="logo-apple"></ion-icon>
-                    </span> -->
-
-                        <img  src="./assets/images/fuho_logo.png" alt="" class="logo">
-   
-                </a>
-                <!-- <div class="sub-header-img">
-                    
-                </div> -->
+                <img  src="./assets/images/fuho_logo.png" alt="" class="logo">
             </li>
-
             <li>
                 <a href="#">
                     <span class="icon">
