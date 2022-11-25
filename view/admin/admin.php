@@ -12,6 +12,9 @@
     <div class="navigation">
         <ul>
             <li>
+                <img  src="./assets/images/fuho_logo.png" alt="" class="logo">
+            </li>
+            <li>
                 <a href="#">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>

@@ -13,7 +13,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
+.logo {
+  max-width: 200px;
+  object-fit: cover;
+}
 .container {
   position: relative;
   width: 100%;
@@ -62,8 +65,8 @@ body {
   position: fixed;
   width: 300px;
   height: 100%;
-  background: var(--blue);
-  border-left: 10px solid var(--blue);
+  background: var(--primary-color);
+  border-left: 10px solid var(--primary-color);
   transition: 0.5s;
   overflow: hidden;
 }
@@ -94,6 +97,7 @@ body {
 .navigation ul li:nth-child(1) {
   /* margin-bottom: 40px; */
   pointer-events: none;
+  text-align: center;
 }
 
 .navigation ul li a {
@@ -106,7 +110,7 @@ body {
 }
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
-  color: var(--blue);
+  color: var(--primary-color);
 }
 
 .navigation ul li a .icon {
@@ -265,7 +269,7 @@ body {
   position: relative;
   font-weight: 500;
   font-size: 2.5rem;
-  color: var(--blue);
+  color: var(--primary-color);
 }
 
 .cardBox .card .cardName {
@@ -280,7 +284,7 @@ body {
 }
 
 .cardBox .card:hover {
-  background: var(--blue);
+  background: var(--primary-color);
 }
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .cardName,
@@ -315,7 +319,7 @@ body {
 }
 .cardHeader h2 {
   font-weight: 600;
-  color: var(--blue);
+  color: var(--primary-color);
 }
 .btn-insert {
   text-align: right;
@@ -323,7 +327,7 @@ body {
 .btn {
   position: relative;
   padding: 5px 10px;
-  background: var(--blue);
+  background: var(--primary-color);
   text-decoration: none;
   color: var(--white);
   border-radius: 6px;
@@ -345,7 +349,7 @@ body {
   border-bottom: none;
 }
 .details .recentOrders table tbody tr:hover {
-  background: var(--blue);
+  background: var(--primary-color);
   color: var(--white);
 }
 .details .recentOrders table tr td {
@@ -440,7 +444,7 @@ body {
   color: var(--black2);
 }
 .recentCustomers table tr:hover {
-  background: var(--blue);
+  background: var(--primary-color);
   color: var(--white);
 }
 .recentCustomers table tr:hover td h4 span {
@@ -450,7 +454,7 @@ body {
 .search-box  {
   width: 35%;
   height: 50px;
-  background-color: #2a2185;
+  background-color: var(--primary-color);
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -472,7 +476,7 @@ body {
   font-size: 18px;
   padding-left: 10px;
   color: white;
-  background-color: var(--primary-admin);
+  background-color: var(--primary-color);
 }
 .search-box >input::placeholder {
   color: white;
