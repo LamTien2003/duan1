@@ -13,50 +13,10 @@
         <ul>
             <li>
                 <a href="#">
-                    <!-- <span class="icon">
-                        <ion-icon name="logo-apple"></ion-icon>
-                    </span> -->
-
-                        <img  src="./assets/images/fuho_logo.png" alt="" class="logo">
-   
-                </a>
-                <!-- <div class="sub-header-img">
-                    
-                </div> -->
-            </li>
-
-            <li>
-                <a href="#">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
                     <span class="title">Tổng quan</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="?quanly=admin&action=manageUser">
-                    <span class="icon">
-                        <ion-icon name="people-outline"></ion-icon>
-                    </span>
-                    <span class="title">Quản lý User</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="?quanly=admin&action=manageProduct">
-                    <span class="icon">
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                    </span>
-                    <span class="title">Quản lý sản phẩm</span>
-                </a>
-            </li>
-            <li>
-                <a href="?quanly=admin&action=manageCart">
-                    <span class="icon">
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                    </span>
-                    <span class="title">Quản lý Đơn hàng</span>
                 </a>
             </li>
             <li>
@@ -68,11 +28,39 @@
                 </a>
             </li>
             <li>
+                <a href="?quanly=admin&action=manageProduct">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="title">Quản lý sản phẩm</span>
+                </a>
+            </li>
+            
+
+            
+            <li>
+                <a href="?quanly=admin&action=manageCart">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="title">Quản lý Đơn hàng</span>
+                </a>
+            </li>
+           
+            <li>
                 <a href="?quanly=admin&action=manageComment">
                     <span class="icon">
                         <ion-icon name="chatbubble-outline"></ion-icon>
                     </span>
                     <span class="title">Quản lý Bình luận</span>
+                </a>
+            </li>
+            <li>
+                <a href="?quanly=admin&action=manageUser">
+                    <span class="icon">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </span>
+                    <span class="title">Quản lý User</span>
                 </a>
             </li>
 
