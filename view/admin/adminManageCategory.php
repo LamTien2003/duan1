@@ -14,6 +14,10 @@
 <div class="btn-insert">
     <a href="?quanly=admin&action=insertCategory" class="btn">Thêm + </a>
 </div>
+<div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" name="search" id="search-category" placeholder="Nhập tên hoặc ID Danh mục để tìm kiếm"/>
+</div>
 <table>
     <thead>
         <tr>
@@ -26,9 +30,9 @@
         </tr>
     </thead>
 
-    <tbody>
+    <tbody id="result">
         <?php
-            $CategoryPerPage = 10;
+            $CategoryPerPage = 2;
             $countCategorys = $Category->getCountCategory();
             $countPage = ceil($countCategorys / $CategoryPerPage);
             $start = ($page -1) * $CategoryPerPage;
@@ -58,11 +62,17 @@
             $i = 1;
             while($i <= $countPage) {
     ?>
-            <a href="?quanly=admin&action=manageCategory&page=<?php echo $i ?>" 
-                <?php echo $i == $page ? 'class="active"': '' ?>
-            >
-                <?php echo $i ?>
-            </a>
+            <div class="item">
+                <input
+                    value="<?php echo $i ?>" 
+                    onchange="fetchAjax('searchCategory')"
+                    type="radio" 
+                    name="nav" 
+                    id="input-<?php echo $i ?>" 
+                    class="input-page" <?php echo $i == $page ? 'checked': '' ?>
+                />
+                <label for="input-<?php echo $i ?>" class="button button-<?php echo $i ?>"> <?php echo $i ?></label>
+            </div>
     <?php  
             $i++;
         }

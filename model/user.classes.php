@@ -12,6 +12,11 @@ class User extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
+    public function getUsersLimit($start,$count) {
+        $sql = "Select * from user ORDER BY id_user DESC LIMIT $start, $count ";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
+    }
     public function getCountUsers() {
         $sql = "Select * from user";
         $stmt = $this->connect()->query($sql);
@@ -37,6 +42,18 @@ class User extends DB {
         $sql = "DELETE FROM user WHERE id_user = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$id]);
+    }
+    public function searchUser($name,$page,$limit) {
+        $start = ($page -1) * $limit;
+        $sql = "Select * from User WHERE user_name LIKE '%$name%' OR id_user = '$name' ";
+        $sqlResult = "Select * from User WHERE user_name LIKE '%$name%' OR id_user = '$name' LIMIT $start,$limit";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $countTotalUser = $stmt->rowCount();
+        $stmt = $this->connect()->prepare($sqlResult);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return ["countTotalUser" => $countTotalUser, "data" => $result];
     }
 }
 ?>

@@ -1,6 +1,11 @@
 <?php
     include_once('./model/user.classes.php');
     $User = new User();
+    if(isset($_GET['page'])) {
+        $page = $_GET['page'];
+    }else {
+        $page = 1;
+    }
     if(isset($_GET['delete_user']) && $_GET['delete_user']) {
         $id_user = $_GET['delete_user'];
         $User->deleteUser($id_user);
@@ -8,6 +13,10 @@
 ?>
 <div class="btn-insert">
     <a href="?quanly=admin&action=insertUser" class="btn">Thêm + </a>
+</div>
+<div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" name="search" id="search-user" placeholder="Nhập tên hoặc ID User để tìm kiếm"/>
 </div>
 <table>
     <thead>
@@ -25,9 +34,13 @@
         </tr>
     </thead>
 
-    <tbody>
+    <tbody id="result">
         <?php
-            $userList = $User->getUsers();
+            $userPerPage = 2;
+            $countUsers = $User->getCountUsers();
+            $countPage = ceil($countUsers / $userPerPage);
+            $start = ($page -1) * $userPerPage;
+            $userList = $User->getUsersLimit($start,$userPerPage);
             foreach($userList as $row_user) {
         ?>
         <tr>
@@ -51,3 +64,24 @@
         <?php }?>
     </tbody>
 </table>
+<div class="pagination">
+    <?php
+            $i = 1;
+            while($i <= $countPage) {
+    ?>
+            <div class="item">
+                <input
+                    value="<?php echo $i ?>" 
+                    onchange="fetchAjax('searchUser')"
+                    type="radio" 
+                    name="nav" 
+                    id="input-<?php echo $i ?>" 
+                    class="input-page" <?php echo $i == $page ? 'checked': '' ?>
+                />
+                <label for="input-<?php echo $i ?>" class="button button-<?php echo $i ?>"> <?php echo $i ?></label>
+            </div>
+    <?php  
+            $i++;
+        }
+    ?>
+</div>

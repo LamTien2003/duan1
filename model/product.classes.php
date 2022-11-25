@@ -48,7 +48,18 @@ class Product extends DB {
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$id]);
     }
-
+    public function searchProduct($name,$page,$limit) {
+        $start = ($page -1) * $limit;
+        $sql = "Select * from product WHERE title_product LIKE '%$name%' OR id_product = '$name' ";
+        $sqlResult = "Select * from product WHERE title_product LIKE '%$name%' OR id_product = '$name' LIMIT $start,$limit";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $countTotalProduct = $stmt->rowCount();
+        $stmt = $this->connect()->prepare($sqlResult);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return ["countTotalProduct" => $countTotalProduct, "data" => $result];
+    }
 }
 
 ?>

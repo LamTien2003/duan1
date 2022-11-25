@@ -14,6 +14,10 @@
 <div class="btn-insert">
     <a href="?quanly=admin&action=insertProduct" class="btn">Thêm + </a>
 </div>
+<div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" name="search" id="search-product" placeholder="Nhập tên hoặc mã sản phẩm để tìm kiếm"/>
+</div>
 <table>
     <thead>
         <tr>
@@ -26,14 +30,14 @@
         </tr>
     </thead>
 
-    <tbody>
+    <tbody id="result">
         <?php
-            $productPerPage = 10;
+            $productPerPage = 2;
             $countProducts = $Product->getCountProducts();
             $countPage = ceil($countProducts / $productPerPage);
             $start = ($page -1) * $productPerPage;
             $productList = $Product->getProductsLimit($start,$productPerPage);
-            foreach( $productList as $row_sanpham ) {
+            foreach($productList as $row_sanpham) {
         ?>
         <tr>
             <td><?php echo $row_sanpham['id_product'] ?></td>
@@ -59,13 +63,20 @@
             $i = 1;
             while($i <= $countPage) {
     ?>
-            <a href="?quanly=admin&action=manageProduct&page=<?php echo $i ?>" 
-                <?php echo $i == $page ? 'class="active"': '' ?>
-            >
-                <?php echo $i ?>
-            </a>
+            <div class="item">
+                <input
+                    value="<?php echo $i ?>" 
+                    onchange="fetchAjax('searchProduct')"
+                    type="radio" 
+                    name="nav" 
+                    id="input-<?php echo $i ?>" 
+                    class="input-page" <?php echo $i == $page ? 'checked': '' ?>
+                />
+                <label for="input-<?php echo $i ?>" class="button button-<?php echo $i ?>"> <?php echo $i ?></label>
+            </div>
     <?php  
             $i++;
         }
     ?>
 </div>
+

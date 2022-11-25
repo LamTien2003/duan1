@@ -51,5 +51,17 @@ class Category extends DB {
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$id]);
     }
+    public function searchCategory($name,$page,$limit) {
+        $start = ($page -1) * $limit;
+        $sql = "Select * from category WHERE name_category LIKE '%$name%' OR id_category = '$name' ";
+        $sqlResult = "Select * from category WHERE name_category LIKE '%$name%' OR id_category = '$name' LIMIT $start,$limit";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $countTotalCategory = $stmt->rowCount();
+        $stmt = $this->connect()->prepare($sqlResult);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return ["countTotalCategory" => $countTotalCategory, "data" => $result];
+    }
 }
 ?>

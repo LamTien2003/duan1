@@ -61,8 +61,10 @@ session_start();
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <script src="./js/app.js"></script>
 <script src="./js/validate.js"></script>
+<script src="./js/search.js"></script>
 </html>
 <?php
      ob_end_flush(); // Flush the output from the buffer

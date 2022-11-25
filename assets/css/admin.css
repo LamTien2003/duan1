@@ -19,20 +19,44 @@ body {
   width: 100%;
 }
 .pagination {
-  text-align: center;
-  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.pagination a {
-  color: black;
-  padding: 10px 15px;
+.pagination .item input {
+  display: none;
 }
-.pagination a:hover {
-  background-color: rgb(149, 148, 148);
+
+.pagination .button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
 }
-.pagination .active {
-  display: inline-block !important;
-  border-bottom: 4px solid black;
+
+.pagination .button:hover {
+  transform: scale(1.2) ;
 }
+
+
+.pagination input:checked~label {
+  color: white;
+  background-color: #1abc9c;
+}
+
+.pagination input:checked~label:before {
+  transform: scale(1);
+}
+
+
 /* =============== Navigation ================ */
 .navigation {
   position: fixed;
@@ -422,7 +446,37 @@ body {
 .recentCustomers table tr:hover td h4 span {
   color: var(--white);
 }
-
+/* search-box */
+.search-box  {
+  width: 35%;
+  height: 50px;
+  background-color: var(--primary-admin);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  }
+  
+.search-box >i {
+  font-size: 20px;
+  color: white;
+}
+  
+.search-box >input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding-left: 10px;
+  color: white;
+  background-color: var(--primary-admin);
+}
+.search-box >input::placeholder {
+  color: white;
+}
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {
   .navigation {

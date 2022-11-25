@@ -1,17 +1,27 @@
 <?php
     include_once('./model/Bill.classes.php');
+    if(isset($_GET['page'])) {
+        $page = $_GET['page'];
+    }else {
+        $page = 1;
+    }
+
     $Bill = new Bill();
     if(isset($_GET['delete_giohang']) && $_GET['delete_giohang']) {
         $id_giohang = $_GET['delete_giohang'];
         $Bill->deleteBill($id_giohang);
     }
 ?>
+<div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" name="search" id="search-bill" placeholder="Nhập Tên,Địa chỉ hoặc ID đơn hàng để tìm kiếm"/>
+</div>
+
 <table>
     <thead>
         <tr>
             <td>ID đơn hàng</td>
             <td>ID User</td>
-            <td>Gmail</td>
             <td>Địa chỉ giao hàng</td>
             <td>SĐT nhận hàng</td>
             <td>Tên người nhận</td>
@@ -23,15 +33,18 @@
         </tr>
     </thead>
 
-    <tbody>
+    <tbody id="result">
         <?php
-            $bill = $Bill->getBillsByUser();
-            foreach($bill as $row_bill) {
+            $billPerPage = 2;
+            $countBills = $Bill->getCountBills();
+            $countPage = ceil($countBills / $billPerPage);
+            $start = ($page -1) * $billPerPage;
+            $billList = $Bill->getBillsWithUserLimit($start,$billPerPage);
+            foreach($billList as $row_bill) {
         ?>
         <tr>
             <td><?php echo $row_bill['id_bill'] ?></td>
             <td><?php echo $row_bill['id_user'] ?></td>
-            <td><?php echo $row_bill['user_email'] ?></td>
             <td><?php echo $row_bill['delivery_address'] ?></td>
             <td><?php echo $row_bill['receiver_phone'] ?></td>
             <td><?php echo $row_bill['receiver_name'] ?></td>
@@ -48,3 +61,25 @@
         <?php }?>
     </tbody>
 </table>
+
+<div class="pagination">
+    <?php
+            $i = 1;
+            while($i <= $countPage) {
+    ?>
+            <div class="item">
+                <input
+                    value="<?php echo $i ?>" 
+                    onchange="fetchAjax('searchBill')"
+                    type="radio" 
+                    name="nav" 
+                    id="input-<?php echo $i ?>" 
+                    class="input-page" <?php echo $i == $page ? 'checked': '' ?>
+                />
+                <label for="input-<?php echo $i ?>" class="button button-<?php echo $i ?>"> <?php echo $i ?></label>
+            </div>
+    <?php  
+            $i++;
+        }
+    ?>
+</div>

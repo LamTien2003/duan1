@@ -19,6 +19,7 @@ img {
 }
 :root {
     --primary-color: #c8a165;
+    --primary-admin: #2a2185;
     --secondary-color: #c87065;
     --third-color: #FFFFFF;
     --text-color: #666666;
