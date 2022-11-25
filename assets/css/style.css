@@ -434,7 +434,7 @@ input[type="number"] {
 .table-spc td {
     color: #999;
     font-weight: 500;
-    font-size: 15;
+    font-size: 15px;
     padding: 7px 30px;
 
 }

@@ -13,11 +13,16 @@
         <ul>
             <li>
                 <a href="#">
-                    <span class="icon">
+                    <!-- <span class="icon">
                         <ion-icon name="logo-apple"></ion-icon>
-                    </span>
-                    <span class="title">LTShoes</span>
+                    </span> -->
+
+                        <img  src="./assets/images/fuho_logo.png" alt="" class="logo">
+   
                 </a>
+                <!-- <div class="sub-header-img">
+                    
+                </div> -->
             </li>
 
             <li>

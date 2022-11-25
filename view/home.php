@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="main">
+    <div class="main" >
         <div class="category-container">
             <div class="container">
                 <div class="category">
