@@ -117,7 +117,7 @@
         <div class="nav-child" style="width: 48.5%; padding-right: 2.5%;">
             <h4 class="title-coupon border-line">coupon discount</h4>
             <p class="text-titile">Enter your coupon code if you have one!</p>
-            <input type="text" placeholder="Enter your code here.">
+            <input type="text" placeholder="Enter your code here." class="coupon">
             <button type="submit" class="btn color-btn">APPLY COUPY</button>
         </div>
         <div class="nav-mid"></div>
