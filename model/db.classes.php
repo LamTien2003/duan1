@@ -25,7 +25,7 @@ class DB {
         $uploadOk = false;
         }
 
-        if ($image["size"] > 500000) {
+        if ($image["size"] > 1000000) {
         echo "Dung lượng File quá lớn.";
         $uploadOk = false;
         return;

@@ -1,17 +1,17 @@
 
     <footer>
       <div class="single-footer">
-        <div class="footer-title">CONTACT US</div>
+        <div class="footer-title">Thông tin liên hệ:</div>
         <div class="footer-contact">
           <ul>
             <li>
-              <span>Address: </span>
-              28 Green Tower, Street Name, New York City, USA
+              <span>Địa chỉ: </span>
+              173 Quang Trung, quận 12, <br>Tp. Hồ Chí Minh
             </li>
 
             <li>
-              <span>Cell-Phone: </span>
-              012345 - 123456789
+              <span>Hotline: </span>
+              097-373-6666
             </li>
 
             <li>
@@ -23,7 +23,7 @@
       </div>
 
       <div class="single-footer">
-        <div class="footer-title">ACCOUNTS US</div>
+        <div class="footer-title">Danh mục</div>
         <div class="footer-accounts">
           <ul>
            <li><a href="" class="ft-ac-link">My Account</a></li>
@@ -60,12 +60,12 @@
       
 
       <div class="single-footer">
-        <div class="footer-title">EMAIL NEWSLETTERS</div>
+        <div class="footer-title">nhận tin tức từ chúng tôi?</div>
         <div class="footer-subscribe">
           <form action="#">
-            <input type="text" name="email" placeholder="Email Address...">
+            <input type="text" name="email" placeholder="Địa chỉ Email ...">
             <button class="btn-subscribe" type="submit">
-                Subscribe
+                Đăng ký
             </button>
           </form>
         </div>
