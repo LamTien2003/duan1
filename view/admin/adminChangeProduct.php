@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group">
-            <label for="description" class="form-label">SubTitle</label>
+            <label for="description" class="form-label">Mô tả</label>
             <input id="description" name="description" type="text" placeholder="Description của sản phẩm" class="form-control"
                 autocomplete="off" value = "<?php echo $row_product['des_product'] ?>">
             <span class="form-message"></span>
@@ -73,7 +73,7 @@
               <option value="">--Chọn danh mục</option>
 
             <?php
-                $parentCategory = $Category->getParentCategory();
+                $parentCategory = $Category->getCategorys();
                 foreach($parentCategory as $row_parentCategory) {
             ?>
               <option value="<?php echo $row_parentCategory['id_category'] ?>"
