@@ -7,6 +7,7 @@
   --gray: #f5f5f5;
   --black1: #222;
   --black2: #999;
+  --hover-color: #f1f4f3;
 }
 
 body {
@@ -349,8 +350,9 @@ body {
   border-bottom: none;
 }
 .details .recentOrders table tbody tr:hover {
-  background: var(--primary-color);
-  color: var(--white);
+  background: var(--hover-color);
+  color: var(--black1);
+  font-weight: 500;
 }
 .details .recentOrders table tr td {
   padding: 10px;
