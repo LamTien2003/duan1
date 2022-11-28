@@ -35,7 +35,7 @@
 
     <tbody id="result">
         <?php
-            $billPerPage = 2;
+            $billPerPage = 5;
             $countBills = $Bill->getCountBills();
             $countPage = ceil($countBills / $billPerPage);
             $start = ($page -1) * $billPerPage;
@@ -48,7 +48,7 @@
             <td><?php echo $row_bill['delivery_address'] ?></td>
             <td><?php echo $row_bill['receiver_phone'] ?></td>
             <td><?php echo $row_bill['receiver_name'] ?></td>
-            <td><?php echo $row_bill['payment_method'] ?></td>
+            <td><?php echo $row_bill['payment_method'] == '0' ? 'COD' : 'ATM' ?></td>
             <td><?php echo $row_bill['point_used'] ?></td>
             <td><?php echo $row_bill['total_pay'] ?></td>
             <td><?php echo $row_bill['status']?></td>

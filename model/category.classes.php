@@ -54,7 +54,7 @@ class Category extends DB {
     public function searchCategory($name,$page,$limit) {
         $start = ($page -1) * $limit;
         $sql = "Select * from category WHERE name_category LIKE '%$name%' OR id_category = '$name' ";
-        $sqlResult = "Select * from category WHERE name_category LIKE '%$name%' OR id_category = '$name' LIMIT $start,$limit";
+        $sqlResult = "Select * from category WHERE name_category LIKE '%$name%' OR id_category = '$name' ORDER BY parent_id ASC LIMIT $start,$limit";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         $countTotalCategory = $stmt->rowCount();

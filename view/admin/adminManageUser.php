@@ -36,7 +36,7 @@
 
     <tbody id="result">
         <?php
-            $userPerPage = 2;
+            $userPerPage = 5;
             $countUsers = $User->getCountUsers();
             $countPage = ceil($countUsers / $userPerPage);
             $start = ($page -1) * $userPerPage;
@@ -51,7 +51,7 @@
             <td><?php echo $row_user['user_email'] ?></td>
             <td><?php echo $row_user['accountName_user'] ?></td>
             <td><?php echo $row_user['user_password'] ?></td>
-            <td><?php echo $row_user['user_role'] ?></td>
+            <td><?php echo $row_user['user_role'] == '1' ? 'Admin' : 'User' ?></td>
             <td><?php echo $row_user['point_available'] ?></td>
             <td>
                 <a href="?quanly=admin&action=changeUser&id_user=<?php echo $row_user['id_user'] ?>"

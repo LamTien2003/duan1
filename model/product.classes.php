@@ -22,6 +22,11 @@ class Product extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->rowCount();
     }
+    public function getFeaturedProducts($limit) {
+        $sql = "Select * from product ORDER BY hot DESC LIMIT $limit";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
+    }
     public function insertProduct ($title,$image,$hot,$subTitle,$category,$description) {
         $targetFile = $this->addImageToFolder($image);
         if($targetFile) {

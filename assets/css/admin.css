@@ -379,7 +379,7 @@ body {
   display: inline-block;
 }
 .status.delivered {
-  background: #8de02c;
+  background: #1abc9c;
   color: var(--white);
   border-radius: 4px;
   font-size: 14px;

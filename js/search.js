@@ -15,7 +15,7 @@ $(document).ready(() => {
 })
 
 function fetchAjax(searchType) {
-    const limit = 2;
+    const limit = 5;
     const page = $('input[name="nav"]:checked').val() || 1;
     const input = $('input[name="search"]').val();
     

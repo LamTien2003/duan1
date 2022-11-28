@@ -32,7 +32,7 @@
 
     <tbody id="result">
         <?php
-            $productPerPage = 2;
+            $productPerPage = 5;
             $countProducts = $Product->getCountProducts();
             $countPage = ceil($countProducts / $productPerPage);
             $start = ($page -1) * $productPerPage;

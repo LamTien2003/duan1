@@ -32,7 +32,7 @@
 
     <tbody id="result">
         <?php
-            $CategoryPerPage = 2;
+            $CategoryPerPage = 5;
             $countCategorys = $Category->getCountCategory();
             $countPage = ceil($countCategorys / $CategoryPerPage);
             $start = ($page -1) * $CategoryPerPage;
