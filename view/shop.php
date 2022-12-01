@@ -1,3 +1,24 @@
+<?php
+  include_once('./model/product.classes.php');
+  include_once('./model/detailProduct.classes.php');
+  $Product = new Product();
+  $DetailProduct = new DetailProduct();
+
+  if(isset($_GET['page'])) {
+    $page = $_GET['page'];
+  }else {
+      $page = 1;
+  }
+
+  if($_GET['quanly'] == 'cuahang') {
+    if(isset($_GET['id_category'])) {
+        $id_category = $_GET['id_category'];
+    }else {
+        $id_category = 0;
+    }
+}
+?>
+
 <div class="banner">
   <h3 class="title">SHOP</h3>
 </div>
@@ -5,7 +26,8 @@
   <form action="#" method="post" class="container-shop-left">
     <form class="container-item">
       <div class="container-search">
-          <input type="text" placeholder="Search here..." />
+          <input type="text" name="search" id="search-product-homepage" placeholder="Search here..."
+          onchange="fetchAjaxHomePage()" />
           <button type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -16,20 +38,22 @@
 
         <ul class="categories">
           <li class="categorie">
-            <a href="" class="link-categorie">Chair</a>
+            <input type="checkbox" name="category" class="categoryCheckbox" value="15" onchange="fetchAjaxHomePage()">
+            <label for="category" class="link-categorie">Bàn</label>
           </li>
           <li class="categorie">
-            <a href="" class="link-categorie">Furniture</a>
+            <input type="checkbox" name="category" class="categoryCheckbox" value="19" onchange="fetchAjaxHomePage()">
+            <label for="category" class="link-categorie">Ghế</label>
           </li>
           <li class="categorie">
-            <a href="" class="link-categorie">Accessories</a>
+            <input type="checkbox" name="category" class="categoryCheckbox" value="22" onchange="fetchAjaxHomePage()">
+            <label for="category" class="link-categorie">Tủ</label>
           </li>
           <li class="categorie">
-            <a href="" class="link-categorie">Top Brands</a>
+            <input type="checkbox" name="category" class="categoryCheckbox" value="27" onchange="fetchAjaxHomePage()">
+            <label for="category" class="link-categorie">Đồ trang trí</label>
           </li>
-          <li class="categorie">
-            <a href="" class="link-categorie">Jewelry</a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -39,30 +63,40 @@
         <div class="price-amount">
           <h5>You ranger: </h5>
           <div class="section-item fillter">
-            <input class="range" type="range" name ="range" min="0" max="10000000" value="10" step="10000"
-                onmousemove="rangevalue1.value=nf.format(value)" />
-            <div class="price-fillter">
-                <output id="rangevalue">0</output>
-                <output id="rangevalue1">0</output>
+                <input class="range" type="range" name ="range" min="0" max="10000000" value="1000000000" step="10000"
+                    onmousemove="rangevalue1.value=nf.format(value)"
+                    onchange="fetchAjaxHomePage()" />
+                <div class="price-fillter">
+                    <output id="rangevalue">0</output>
+                    <output id="rangevalue1">0</output>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="filter-ranger">
-
-        </div>
-        
       </div>
     </div>
 
     <div class="container-item">
       <div class="container-size">
         <div class="title-shop-left">SIZE</div>
-        <ul class="list-size">
-          <li class="size"><a href="" class="link-size">S</a></li>
-          <li class="size"><a href="" class="link-size">M</a></li>
-          <li class="size"><a href="" class="link-size">L</a></li>
-          <li class="size"><a href="" class="link-size">XL</a></li>
-        </ul>
+        <div class="checkbox">
+          <div class="item-checkbox">
+            <input type="checkbox" id="size" name ="size" value="'160x40'" 
+            onchange="fetchAjaxHomePage()">
+            <label for="size">160x40</label>
+          </div>
+          <div class="item-checkbox">
+            <input type="checkbox" id="size2" name ="size" value="'120x40'" 
+            onchange="fetchAjaxHomePage()" >
+            <label for="size2">120x40</label>
+          </div>
+          <div class="item-checkbox">
+            <input type="checkbox" id="size3" name ="size" value="'180x50'" 
+            onchange="fetchAjaxHomePage()" >
+            <label for="size3">180x50</label>
+          </div>
+                  
+        </div>
+        
       </div>
     </div>
 
@@ -104,150 +138,52 @@
       <div class="text-end">Showing 01-09 of 17 Results</div>
     </div>
 
-    <div class="product-list">
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
+    <div class="product-list-shop" id="result">
+      <?php
+          $productPerPage = 6;
+          $countProducts = $Product->getCountProductsByCategory($id_category);
+          $countPage = ceil($countProducts / $productPerPage);
+          $start = ($page -1) * $productPerPage;
+          $productList = $Product->getProductsByCategory($id_category,$productPerPage);
+          foreach($productList as $item) {                       
+      ?>
+        <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">
+          <img src="<?php echo $item['img_product'] ?>" alt="">
+          <div class="product-info">
+              <p class="product-name"><?php echo $item['title_product'] ?></p>
+              <p class="product-price"><?php echo number_format($item['detail_price'], 0, '', '.')?> đ</p>
+              <button class="btn-addtocart">
+                  Mua Ngay
+                  <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+          </div>
       </a>
-      <a href="#" class="product-item">
-        <img src="assets/images/product 2.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-      <a href="#" class="product-item">
-        <img src="assets/images/product 3.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-      <a href="#" class="product-item">
-        <img src="assets/images/product 4.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
-
-      <a href="#" class="product-item">
-        <img src="assets/images/product 1.webp" alt="" />
-        <div class="product-info">
-          <p class="product-name">DUMMY PRODUCT NAME</p>
-          <p class="product-price">555$</p>
-          <button class="btn-addtocart">
-            Mua Ngay
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-      </a>
+      <?php
+          }
+      ?>
     </div>
-
-    <div class="pagination-shop">
+    <div class="pagination">
+    <?php
+            $i = 1;
+            while($i <= $countPage) {
+    ?>
+            <div class="item">
+                <input
+                    value="<?php echo $i ?>" 
+                    onchange="fetchAjaxHomePage()"
+                    type="radio" 
+                    name="nav" 
+                    id="input-<?php echo $i ?>" 
+                    class="input-page" <?php echo $i == $page ? 'checked': '' ?>
+                />
+                <label for="input-<?php echo $i ?>" class="button button-<?php echo $i ?>"> <?php echo $i ?></label>
+            </div>
+    <?php  
+            $i++;
+        }
+    ?>
+</div>
+    <!-- <div class="pagination-shop">
       <ul>
         <li>
           <a href="" class="link-product-shop"
@@ -279,6 +215,9 @@
           ></a>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </div>
+
+
+

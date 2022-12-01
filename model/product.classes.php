@@ -23,9 +23,28 @@ class Product extends DB {
         return $stmt->rowCount();
     }
     public function getFeaturedProducts($limit) {
-        $sql = "Select * from product ORDER BY hot DESC LIMIT $limit";
+        $sql = "Select * from product INNER JOIN detailproduct ON product.id_product = detailproduct.id_product 
+        GROUP BY product.id_product ORDER BY product.hot_product DESC LIMIT $limit";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
+    }
+    public function getBestSellerProducts($limit) {
+        $sql = "Select * from product INNER JOIN detailproduct ON product.id_product = detailproduct.id_product 
+        GROUP BY product.id_product ORDER BY sum(detailproduct.sold) ASC LIMIT $limit";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
+    }
+    public function getProductsByCategory($id_category,$limit) {
+        $condition = $id_category != 0 ? "HAVING id_category = $id_category LIMIT $limit" : "HAVING 1 LIMIT $limit";
+        $sql = "Select * from product INNER JOIN detailproduct ON product.id_product = detailproduct.id_product GROUP BY product.id_product $condition";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
+    }
+    public function getCountProductsByCategory($id_category) {
+        $condition = $id_category != 0 ? "WHERE id_category = $id_category" : "WHERE 1";
+        $sql = "Select * from product $condition";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->rowCount();
     }
     public function insertProduct ($title,$image,$hot,$subTitle,$category,$description) {
         $targetFile = $this->addImageToFolder($image);

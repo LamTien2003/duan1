@@ -1,4 +1,7 @@
-
+<?php
+    include_once('./model/user.classes.php');
+    $User = new User();
+?>
     <header>
       <!-- Begin Sub-Header -->
       <div class="sub-header">
@@ -237,8 +240,34 @@
               </div> 
             </div>   
           </div>
-          <div class="icon">
-            <i class="fa-solid fa-user"></i>
+          <div class="icon icon-user">
+            <a href="index.php?quanly=login"  class="menu_link <?php echo Session::getValueSession('user') ? 'login-success' : '' ?>">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <?php 
+                    if(Session::getValueSession('user')){
+                        $id_user = Session::getValueSession('user');
+                        $row_user = $User->getUserId($id_user);
+                        foreach($row_user as $item) {
+                          if($item['user_role'] == 1 ) {
+                                echo '<ul class="menu-user">
+                                        <li><a href="index.php?quanly=user">Thông tin cá nhân</a></li>
+                                        <li><a href="index.php?quanly=user&action=mycart">Chi tiết đơn hàng</a></li>
+                                        <li><a href="index.php?quanly=admin">Quản trị Admin</a></li>
+                                        <li><a href="index.php?quanly=login&delete_userSession=true">Đăng xuất</a></li>
+                                    </ul>';
+                            }else {
+                                echo '<ul class="menu-user">
+                                        <li><a href="index.php?quanly=user">Thông tin cá nhân</a></li>
+                                        <li><a href="index.php?quanly=user&action=mycart">Chi tiết đơn hàng</a></li>
+                                        <li><a href="index.php?quanly=login&delete_userSession=true">Đăng xuất</a></li>
+                                    </ul>';
+                            }
+                        }
+                        
+                        
+                    };
+                ?>
           </div>
         </div>
       </div>

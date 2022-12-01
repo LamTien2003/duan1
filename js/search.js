@@ -12,6 +12,9 @@ $(document).ready(() => {
     $('#search-bill').keyup(()=> {    
         fetchAjax('searchBill')
     })
+    // $('#search-product-homepage').keyup(()=> {    
+    //     fetchAjax('searchProductHomepage')
+    // })
 })
 
 function fetchAjax(searchType) {
@@ -73,6 +76,64 @@ function fetchAjax(searchType) {
            
             $('#result').html(html);
             $('.pagination').html(htmlPagination);
+        },
+    })
+}
+function fetchAjaxHomePage() {
+    const limit = 6;
+    const page = $('input[name="nav"]:checked').val() || 1;
+    const search = $('input[name="search"]').val();
+    const range = $('input[name="range"]').val();
+    let category = ['1']
+    let size = ['1']
+    $("input:checkbox[name='category']:checked").each(function(){
+        category.push($(this).val());
+    });
+    $("input:checkbox[name='size']:checked").each(function(){
+        size.push($(this).val());
+    });
+
+    const value = {
+        search,
+        page,
+        limit,
+        range,
+        'category': category,
+        'size': size,
+    }
+    $.ajax({
+        url:"ajax/search.php",
+        method: "POST",
+        data: {
+            searchHomePage: value,
+        },
+        success: function (data) {
+            const newData = JSON.parse(data);
+            const list = newData.data;
+            const pagination = newData.pagination;
+            let html ='';
+            if(list.length) {
+                html += renderProductHomePage(list)
+            }else {
+                html += `<h4>Không có sản phẩm phù hợp </h4>`
+            }
+            let htmlPagination = "";
+            for(let i = 0; i < pagination; i++) {
+                htmlPagination+= `<div class="item">
+                <input
+                    value="${i + 1}" 
+                    onchange="fetchAjaxHomePage()"
+                    type="radio" 
+                    name="nav" 
+                    id="input-${i + 1}" 
+                    class="input-page" ${page == i +1 && "checked"}
+                />
+                <label for="input-${i + 1}" class="button button-${i + 1}"> ${i + 1}</label>
+            </div>`
+            }
+            $('#result').html(html);
+            $('.pagination').html(htmlPagination)
+            console.log(newData)
         },
     })
 }
@@ -152,5 +213,21 @@ function renderBill (list) {
                         <a href="?quanly=admin&action=manageCart&delete_giohang=${item.id_bill}" class="status return">Xóa</a>
                     </td>
                 </tr>`
+    }).join('')
+}
+
+function renderProductHomePage(list) {
+    return list.map(item => {
+       return `<a href="index.php?quanly=chitiet&id=${item.id_product}" class="product-item">
+            <img src="${item.img_product}" alt="">
+            <div class="product-info">
+                <p class="product-name">${item.title_product}</p>
+                <p class="product-price">${nf.format(item.detail_price)} đ</p>
+                <button class="btn-addtocart">
+                    Mua Ngay
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </a>`
     }).join('')
 }

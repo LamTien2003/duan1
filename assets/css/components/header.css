@@ -299,3 +299,46 @@
   .search-btn i {
     font-size: 1.7rem;
   } 
+  .icon-user i {
+    font-size: 1.7rem;
+    color: var(--text-color);
+  }
+  .icon-user .login-success i {
+    color: var(--primary-color);
+  }
+
+  .menu-user {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    top: 10%;
+    right: 9%;
+    color: black;
+    width: 200px;
+    list-style: none;
+    text-align: center;
+    background-color: #7c7c79;
+}
+.icon-user:hover .menu-user {
+    display: block;
+}
+.icon-user::before {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 30px;
+    top: 10%;
+    right: 9%;
+}
+.menu-user li a {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 0;
+    transition: all linear 0.10;
+}
+.menu-user li a:hover {
+    color: var(--mainColor);
+}

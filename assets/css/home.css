@@ -68,8 +68,14 @@
 .slick-prev {
   left: 2%;
 }
+.product-list .slick-prev  {
+  left: -5%;
+}
 .slick-next {
   right: 2%;
+}
+.product-list .slick-next{
+  right: -5%;
 }
 .slick-prev:hover,
 .slick-next:hover {
@@ -185,6 +191,8 @@
   display: flex;
 }
 .product-item {
+  display: flex;
+  flex-direction: column;
   width: 25%;
   padding: 15px 20px;
   margin: 0 15px;
@@ -193,13 +201,17 @@
 }
 .product-info {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
 .product-item img {
+  flex-shrink: 0;
   width: 100%;
+  max-height: 230px;
+  overflow-y: hidden;
 }
 .product-name {
   color: #434343;

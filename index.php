@@ -1,8 +1,9 @@
 <?php
-ob_start(); //Fix loi setcookie hoac header sau khi html duoc render
-session_start();
+    ob_start(); //Fix loi setcookie hoac header sau khi html duoc render
     include_once('./model/db.classes.php');
+    include_once('./model/session.classes.php');
     include_once('./model/product.classes.php');
+    Session::init();
 ?>
 
 <!DOCTYPE html>
@@ -30,12 +31,22 @@ session_start();
                     break;
                     case 'cuahang': 
                         echo '<link rel="stylesheet" href="./assets/css/shop.css">';
+                        echo '<link rel="stylesheet" href="./assets/css/admin.css">';
                     break;
                     case 'giohang': 
                         echo '<link rel="stylesheet" href="./assets/css/style.css">';
                     break;
+                    case 'chitiet': 
+                        echo '<link rel="stylesheet" href="./assets/css/style.css">';
+                    break;
                     case 'gioithieu': 
                         echo '<link rel="stylesheet" href="./assets/css/about.css">';
+                    break;
+                    case 'login': 
+                        echo '<link rel="stylesheet" href="./assets/css/login.css">';
+                    break;
+                    case 'register': 
+                        echo '<link rel="stylesheet" href="./assets/css/register.css">';
                     break;
                 
             }
@@ -47,20 +58,46 @@ session_start();
 </head>
 <body>
   <?php 
-
-  ( isset($_GET['quanly']) && $_GET['quanly'] == 'admin' ) ? '' : include_once './view/components/header.php';
+    if(isset($_GET['quanly'])) {
+        switch($_GET['quanly']) {
+            case 'admin': ''; break;
+            case 'login': ''; break;
+            case 'register': ''; break;
+            default: {
+                include_once './view/components/header.php';
+                break;
+            }
+        }
+    }else {
+        include_once './view/components/header.php';
+    }
   if(isset($_GET['quanly'])) {
       switch($_GET['quanly']) {
           case 'cuahang': include_once './view/shop.php'; break; 
           case 'gioithieu': include_once './view/about.php'; break; 
           case 'giohang': include_once './view/shoppingcart.php'; break; 
+          case 'chitiet': include_once './view/chitietsp.php'; break; 
+          case 'login': include_once './view/components/login.php'; break; 
+          case 'register': include_once './view/components/register.php'; break; 
           case 'admin': include_once './view/admin/admin.php'; break; 
       }
   }else {
       include_once './view/home.php'; 
   }
   
-  ( isset($_GET['quanly']) && $_GET['quanly'] == 'admin' ) ? '' : include_once './view/components/footer.php';
+  if(isset($_GET['quanly'])) {
+        switch($_GET['quanly']) {
+            case 'admin': ''; break;
+            case 'login': ''; break;
+            case 'register': ''; break;
+            default: {
+                include_once './view/components/footer.php';
+                break;
+            }
+        }
+    }else {
+        include_once './view/components/footer.php';
+    }
 
     
   ?>
@@ -73,6 +110,7 @@ session_start();
 <script src="./js/validate.js"></script>
 <script src="./js/search.js"></script>
 </html>
+
 <?php
      ob_end_flush(); // Flush the output from the buffer
 ?>

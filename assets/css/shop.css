@@ -69,11 +69,13 @@ header{
   color: var(--text-color);
 }
 
-.product-list {
+.product-list-shop {
   display: flex;
   flex-wrap: wrap;
 }
 .product-item {
+  display: flex;
+  flex-direction: column;
   width: 30%;
   padding: 15px 20px;
   margin: 10px 15px;
@@ -82,13 +84,17 @@ header{
 }
 .product-info {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
 .product-item img {
+  flex-shrink: 0;
   width: 100%;
+  max-height: 230px;
+  overflow-y: hidden;
 }
 .product-name {
   color: #434343;
@@ -120,7 +126,6 @@ header{
   background-color: var(--primary-color);
   color: white;
 }
-
 .pagination-shop {
   display: flex;
   padding: 1.5rem;
@@ -151,8 +156,12 @@ header{
 /* Shop-Left */
 .container-shop-left {
   display: flex;
+  width: 25%;
   flex-direction: column;
   margin-top: 10px;
+}
+.container-shop-right {
+  flex: 1;
 }
 .container-item{
   background-color: var(--third-color);
@@ -224,13 +233,16 @@ form button[type="submit"]:hover {
 }
 
 .categories {
-  padding: 0 30px;
+  padding: 10px 30px;
+}
+.categorie {
+  font-size: 2rem;
 }
 
-.categorie a {
+.categorie .link-categorie {
   color: #666;
-  display: block;
-  font-size: 1.4rem;
+  display: inline-block;
+  font-size: 1.6rem;
   line-height: 25px;
   text-transform: capitalize;
   cursor: pointer;
@@ -290,16 +302,6 @@ form button[type="submit"]:hover {
   color: var(--text-color);
   font-weight: 300;
 }
-
-.filter-ranger{
-  background: var(--primary-color) repeat scroll 0 0;
-    border: medium none;
-    height: 3px;
-    width: 80%;
-    margin:10px auto;
-
-}
-
 
 /* Custom input range */
 
@@ -407,5 +409,28 @@ form button[type="submit"]:hover {
 .fillter {
   margin: 10px 0 0 0;
 }
-  
+.checkbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+.item-checkbox input  {
+  display: none;
+}
+.item-checkbox label{
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+.item-checkbox input:checked~label {
+  color: white;
+  background-color: var(--primary-color);
+}
   

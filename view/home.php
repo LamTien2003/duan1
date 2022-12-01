@@ -1,4 +1,7 @@
-
+<?php
+    include_once('./model/product.classes.php');
+    $Product = new Product();
+?>
     <div class="slider">
         <div class="slider-item">
             <img src="./assets/images/slider 1.webp" alt="" class="slider-image">
@@ -58,50 +61,24 @@
             <div class="container">
                 <h2 class="title">Featured Products</h2>
                 <div class="product-list">
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 1.webp" alt="">
+                    <?php
+                        $productList = $Product->getFeaturedProducts(10);
+                        foreach($productList as $item) {                       
+                    ?>
+                        <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">
+                        <img src="<?php echo $item['img_product'] ?>" alt="">
                         <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
+                            <p class="product-name"><?php echo $item['title_product'] ?></p>
+                            <p class="product-price"><?php echo number_format($item['detail_price'], 0, '', '.')?> đ</p>
                             <button class="btn-addtocart">
                                 Mua Ngay
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
                     </a>
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 2.webp" alt="">
-                        <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
-                            <button class="btn-addtocart">
-                                Mua Ngay
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </div>
-                    </a>
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 3.webp" alt="">
-                        <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
-                            <button class="btn-addtocart">
-                                Mua Ngay
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </div>
-                    </a>
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 4.webp" alt="">
-                        <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
-                            <button class="btn-addtocart">
-                                Mua Ngay
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </div>
-                    </a>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -109,50 +86,24 @@
             <div class="container">
                 <h2 class="title">BestSeller Products</h2>
                 <div class="product-list">
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 1.webp" alt="">
+                    <?php
+                        $productList = $Product->getBestSellerProducts(10);
+                        foreach($productList as $item) {                       
+                    ?>
+                        <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">
+                        <img src="<?php echo $item['img_product'] ?>" alt="">
                         <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
+                            <p class="product-name"><?php echo $item['title_product'] ?></p>
+                            <p class="product-price"><?php echo number_format($item['detail_price'], 0, '', '.')?> đ</p>
                             <button class="btn-addtocart">
                                 Mua Ngay
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
                     </a>
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 2.webp" alt="">
-                        <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
-                            <button class="btn-addtocart">
-                                Mua Ngay
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </div>
-                    </a>
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 3.webp" alt="">
-                        <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
-                            <button class="btn-addtocart">
-                                Mua Ngay
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </div>
-                    </a>
-                    <a href="#" class="product-item">
-                        <img src="./assets/images/product 4.webp" alt="">
-                        <div class="product-info">
-                            <p class="product-name">DUMMY PRODUCT NAME</p>
-                            <p class="product-price">555$</p>
-                            <button class="btn-addtocart">
-                                Mua Ngay
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </div>
-                    </a>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>

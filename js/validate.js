@@ -254,7 +254,7 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
         form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'gold' : undefined
     }else {
         mess.innerHTML = ''
-        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'white' : undefined
+        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'transparent' : undefined
     }
     return isChecked
 }

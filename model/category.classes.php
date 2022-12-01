@@ -21,6 +21,25 @@ class Category extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
+    public function getArrayChildCategory($arr_parent) {
+        $sql = "Select id_category from category WHERE parent_id = ";
+        for($i = 0; $i<count($arr_parent); $i++) {
+            if($arr_parent[$i] == 1) {
+                continue;
+            }else if($i == count($arr_parent) -1) {
+                $sql .= $arr_parent[$i];
+            }else {
+                $sql .= "$arr_parent[$i] OR parent_id = ";
+            }
+        }
+        $stmt = $this->connect()->query($sql);
+        $arr_fetch = $stmt->fetchAll();
+        $result = [];
+        foreach($arr_fetch as $item ) {
+            array_push($result,$item['id_category']);
+        }
+        return $result;
+    }
     public function getCountCategory() {
         $sql = "Select * from category";
         $stmt = $this->connect()->query($sql);
