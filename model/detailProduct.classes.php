@@ -18,6 +18,11 @@ class DetailProduct extends Product {
         $stmt->execute([$inventory,$sold,$size,$price,$id_detailProduct]);
         header("Location:index.php?quanly=admin&action=detailProduct&id_sanpham=$id_product");
     }
+    public function updateAmountDetailProduct($id_detailProduct,$amount) {
+        $sql = "UPDATE `detailproduct` SET inventory = inventory - $amount, sold = sold + $amount 
+        WHERE `id_detailProduct` = $id_detailProduct";
+        $stmt = $this->connect()->query($sql);
+    }
     public function deleteDetailProduct($id) {
         $sql = "DELETE FROM detailproduct WHERE id_detailProduct = ?";
         $stmt = $this->connect()->prepare($sql);

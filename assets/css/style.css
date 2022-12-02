@@ -168,12 +168,21 @@ ul {
     height: auto;
     background-color: white;
     padding: 30px 15px 30px 30px;
+    
 }
 
 .nav-mid {
     width: 3%;
     height: auto;
     background-color: #f6f6f6;
+}
+.payment {
+    width: 48.5%;
+    display: flex;
+    padding-right: 2.5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 form {
@@ -398,12 +407,10 @@ img {
     box-shadow: none;
     color: #999;
     height: 40px;
-    margin-bottom: 15px;
     padding: 0 20px;
     transition: all 0.5s ease 0s;
     width: 100%;
     outline: none;
-    margin: 5% 0;
     font-size: 1.6rem;
 }
 input[type="number"] {
@@ -670,6 +677,11 @@ span.size-title:hover {
     color: white;
     background-color: var(--primary-color);
   }
+  .item-checkbox input:disabled~label {
+    color: white;
+    background-color: #d9d9d9;
+    cursor: not-allowed;
+  }
   .label-checkbox {
     font-size: 1.6rem;
     font-weight: 700;
@@ -679,6 +691,89 @@ span.size-title:hover {
     font-size: 1.4rem;
     margin-top: 15px;
     font-weight: bold;
+  }
+  /* Cart Page */
+.submit-pay {
+    text-align: center;
+    margin: 15px 0 10px 0;
+}
+.submit-pay input[type="submit"] {
+    padding: 16px 50px;
+}
+  /* Form */
+.form-group {
+    margin: 30px 0;
+}
+.form-group .exactly {
+    background: #f6f6f6 none repeat scroll 0 0;
+}
+.form-group .not-exactly {
+    background: var(--primary-color);
+}
+.form-message {
+    font-size: 1.2rem;
+    color: red;
+    font-weight: 700;
+}
+.form-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+/* Custom checkbox coupon Cart Page */
+.checkbox-coupon {
+    opacity: 0;
+    background-color: white;
+    position: absolute;
+  }
+  
+  .label-checkbox-coupon {
+    width: 36px;
+    height: 12px;
+    background-color: #666;
+    display: flex;
+    border-radius:50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+  }
+  
+  .ball {
+    width: 9px;
+    height: 9px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox-coupon:checked + .label-checkbox-coupon .ball{
+    transform: translateX(24px);
+  }
+  .checkbox-coupon:checked + label {
+    background-color: var(--primary-color);
+  }
+  .coupon-mode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .coupon-mode p {
+    margin: 0;
+  }
+  .coupon-mode p strong {
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+  .coupon-button {
+    margin-left: 18px;
   }
 /*  */
 

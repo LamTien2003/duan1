@@ -38,6 +38,23 @@ class User extends DB {
         $stmt->execute([$fullName,$phone,$address,$email,$userName,$password,$role,$id_user]);
         header("Location:index.php?quanly=admin&action=manageUser");
     }
+    public function addPointUser($point,$id_user) {
+        $sql = "UPDATE `user` SET point_available = point_available + $point WHERE id_user = $id_user";
+        $stmt = $this->connect()->query($sql);
+        echo "<script type='text/javascript'>alert('Chúc mừng, bạn vừa nhận được $point điểm thưởng, điểm thưởng sẽ được cộng vào ví và sử dụng khi thanh toán hóa đơn');</script>";
+    }
+    public function deletePointUser($point,$id_user) {
+        $sql = "UPDATE `user` SET point_available = point_available - $point WHERE id_user = $id_user";
+        $stmt = $this->connect()->query($sql);
+        echo "<script type='text/javascript'>alert('Chúc mừng, bạn vừa nhận được $point điểm thưởng, điểm thưởng sẽ được cộng vào ví và sử dụng khi thanh toán hóa đơn');</script>";
+    }
+    public function changeInfoUser($fullName,$password,$phone,$address,$email,$id_user) {
+        $sql = "UPDATE user 
+        SET `user_name` = ?, user_phone = ?, user_address = ?, user_email = ?,user_password = ? WHERE id_user = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$fullName,$phone,$address,$email,$password,$id_user]);
+        header("Location:index.php?quanly=user");
+    }
     public function deleteUser($id) {
         $sql = "DELETE FROM user WHERE id_user = ?";
         $stmt = $this->connect()->prepare($sql);

@@ -5,6 +5,17 @@ class Comment extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
+    public function getCommmentsOfProduct($id_product) {
+        $sql = "Select * from comment WHERE id_product = $id_product AND accept = 1";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
+    }
+    public function insertComment($comment,$id_product,$id_user) {
+        $sql = "INSERT INTO `comment` ( `comment_content`, `accept`, `id_product`, `id_user`)
+         VALUES ( ?, '0', ?, ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$comment,$id_product,$id_user]);
+    }
     public function deleteComment($id) {
         $sql = "DELETE FROM comment WHERE id_comment = ?";
         $stmt = $this->connect()->prepare($sql);

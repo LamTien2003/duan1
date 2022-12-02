@@ -1,0 +1,226 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content {
+    padding: 60px 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+.content-left {
+    width: 30%;
+    padding: 0 50px;
+}
+.content-right {
+    width: 70%;
+    padding: 25px 40px;
+    background-color: #e7e3e3;
+    border-radius: 6px;
+}
+
+.content-left .logo {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.content-left .logo .img {
+    display: flex;
+    align-items: center;
+}
+.content-left .logo .img img {
+    max-height: 50px;
+    border-radius: 50%;
+}
+.content-left .logo .logo-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 8px;
+    text-align: left;
+}
+.content-left .logo .logo-info .name {
+    font-size: 1.6rem;
+    width: 100%;
+}
+.content-left .logo .logo-info .change-info {
+    font-size: 1.4rem;
+}
+.content-left .info-user {
+    padding: 30px 0;
+    border-top: 2px solid #ccc;
+}
+.content-left .info-user .info-details {
+    margin: 10px 0 ;
+    color: black;
+    font-weight: bold;
+}
+.content-left .info-user .info-details a {
+    font-size: 1.6rem;
+    padding: 10px;
+}
+
+.content-right .title {
+    text-align: start;
+    padding: 16px 0;
+    border-bottom: 2px solid #ccc;
+}
+.content-right .title h3 {
+    font-size: 2rem;
+}
+.content-right .title p {
+    font-size: 1.6rem;
+}
+
+
+/* User Cart */
+.order {
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.order .user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    width: 80%;
+    margin: auto;
+    border-bottom: 2px solid #ccc;
+}
+
+.order .user .user-info {
+    color: #ee4d2d;
+    font-weight: bold;
+}
+.order .user .user-info p {
+    font-size: 1.6rem;
+}
+
+.order .user .status {
+    color: #26aa99;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.product {
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+}
+
+.product-info {
+    display: flex;
+    width: 80%;
+}
+
+.product-info img {
+    max-width: 80px;
+}
+
+.product-info .product-details {
+    padding: 0 0 0 45px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: left;
+    flex-direction: column;
+}
+
+.product-info .product-details h4 {
+    font-size: 2rem;
+}
+.product-info .product-details-divide {
+    text-align: center;
+}
+.product-info .product-details-divide p {
+    margin: 6px 0;
+    font-size: 1.4rem;
+}
+
+.price {
+    width: 20%;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.total {
+    display: flex;
+    justify-content: space-around;
+    align-items: self-end;
+    padding: 16px 0;
+    background-color: #fffefb;
+    border-radius: 14px;
+}
+.total p {
+    margin: 6px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.total .total-pay {
+    color: #ee4d2d;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.total .total-submit {
+    width: 35%;
+}
+.total .total-info {
+    flex: 1;
+}
+.total-submit input {
+    cursor: pointer;
+    padding: 15px 32px;
+    font-size: 1.3rem;
+    align-self: center;
+    color: #434343;
+    font-weight: 400;
+    background-color: #f0f0f0;
+    border: 2px solid #cececd;
+    transition: all linear 0.3s;
+}
+.total-submit input:hover {
+    color: white;
+    background-color: var(--primary-color);
+
+}
+/*  */
+
+.form-group {
+    flex-direction: row;
+    justify-content: space-around;
+}
+.form-label {
+    width: 30%;
+}
+.form-control {
+    width: 100%;
+    font-size: 1.5rem;    
+}
+.form-control:hover {
+    border-color: var(--mainColor);
+}
+
+.form-submit {
+    width: 30%;
+    border-radius: 0;
+    background-color: var(--mainColor);
+}
+.form {
+    background-color: #e7e3e3;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

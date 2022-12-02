@@ -28,8 +28,8 @@
                     if($item['user'] == $id_user )
                     $checkContain = true;
                 }
-                $newCartSession = array_push($sessionCart,$arr);
-                !$checkContain ? Session::setValueSession('cart',$newCartSession) : '';
+                array_push($sessionCart,$arr);
+                !$checkContain ? Session::setValueSession('cart',$sessionCart) : '';
                 // !$checkContain ? array_push($_SESSION['cart'],$arr) : '';
 
                 $message = "Đăng nhập thành công";

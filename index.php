@@ -4,6 +4,7 @@
     include_once('./model/session.classes.php');
     include_once('./model/product.classes.php');
     Session::init();
+    // var_dump(Session::getValueSession("cart"));
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +49,10 @@
                     case 'register': 
                         echo '<link rel="stylesheet" href="./assets/css/register.css">';
                     break;
+                    case 'user': 
+                        echo '<link rel="stylesheet" href="./assets/css/user.css">';
+                        echo '<link rel="stylesheet" href="./assets/css/components/form.css">';
+                    break;
                 
             }
         }else {
@@ -80,6 +85,8 @@
           case 'login': include_once './view/components/login.php'; break; 
           case 'register': include_once './view/components/register.php'; break; 
           case 'admin': include_once './view/admin/admin.php'; break; 
+          case 'user': include_once './view/user.php'; break; 
+
       }
   }else {
       include_once './view/home.php'; 

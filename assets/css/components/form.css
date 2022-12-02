@@ -87,3 +87,9 @@
   .form-submit:hover {
     background-color: #20e9d5;
   }
+  .form-group .exactly {
+    background-color: transparent;
+  }
+  .form-group .not-exactly {
+    background-color: var(--primary-color);
+  }

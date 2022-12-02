@@ -251,10 +251,12 @@ function check(form,min = 0,max = 100,regex = "",error = "Không được để 
     })
     if(!isChecked) {
         mess.innerHTML = error
-        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'gold' : undefined
+        form.querySelector('input') ? form.querySelector('input').classList.remove('exactly') : undefined
+        form.querySelector('input') ? form.querySelector('input').classList.add('not-exactly') : undefined
     }else {
         mess.innerHTML = ''
-        form.querySelector('input') ? form.querySelector('input').style.backgroundColor = 'transparent' : undefined
+        form.querySelector('input') ? form.querySelector('input').classList.remove('not-exactly') : undefined
+        form.querySelector('input') ? form.querySelector('input').classList.add('exactly') : undefined
     }
     return isChecked
 }

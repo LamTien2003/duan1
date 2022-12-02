@@ -43,14 +43,14 @@
         <div class="form-group">
             <label for="daban" class="form-label">Số lượng đã bán</label>
             <input id="daban" name="daban" type="text" placeholder="VD: ltt@gmail.com" class="form-control"
-                autocomplete="off" value = "<?php echo $row_detail['inventory'] ?>">
+                autocomplete="off" value = "<?php echo $row_detail['sold'] ?>">
             <span class="form-message"></span>
         </div>
 
         <div class="form-group">
             <label for="tonkho" class="form-label">Số lượng tồn kho: </label>
             <input id="tonkho" name="tonkho" type="text" placeholder="VD: ltt@gmail.com" class="form-control"
-                autocomplete="off" value = "<?php echo $row_detail['sold'] ?>">
+                autocomplete="off" value = "<?php echo $row_detail['inventory'] ?>">
             <span class="form-message"></span>
         </div>
         <input type="text" hidden name="id_sanpham" value="<?php echo $row_detail['id_product'] ?>">
