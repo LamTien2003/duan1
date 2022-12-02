@@ -6,11 +6,11 @@
     }
     if(isset($_POST["submit_changeDetailProduct"]) && $_POST["submit_changeDetailProduct"] ) {
         if( (isset($_POST['price']) && $_POST['price']) && (isset($_POST['size']) && $_POST['size']) &&
-        (isset($_POST['daban']) && $_POST['daban']) && (isset($_POST['tonkho']) && $_POST['tonkho']) ) {
+        (isset($_POST['sold']) && $_POST['sold']) && (isset($_POST['tonkho']) && $_POST['tonkho']) ) {
           $id_sanpham = $_POST['id_sanpham'];
           $price = $_POST['price'];
           $size = $_POST['size'];
-          $sold = $_POST['daban'];
+          $sold = $_POST['sold'];
           $inventory = $_POST['tonkho'];
           $DetailProduct->updateDetailProduct($inventory,$sold,$size,$price,$id_chitiet,$id_sanpham);
       }
@@ -41,8 +41,8 @@
 
 
         <div class="form-group">
-            <label for="daban" class="form-label">Số lượng đã bán</label>
-            <input id="daban" name="daban" type="text" placeholder="VD: ltt@gmail.com" class="form-control"
+            <label for="sold" class="form-label">Số lượng đã bán</label>
+            <input id="sold" name="sold" type="text" placeholder="VD: ltt@gmail.com" class="form-control"
                 autocomplete="off" value = "<?php echo $row_detail['sold'] ?>">
             <span class="form-message"></span>
         </div>
