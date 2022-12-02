@@ -6,10 +6,10 @@
   }
   if(isset($_POST['submit_insertProduct']) && $_POST['submit_insertProduct'] ) {
       if( (isset($_POST['price']) && $_POST['price']) && (isset($_POST['size']) && $_POST['size']) &&
-      (isset($_POST['daban']) && $_POST['daban']) && (isset($_POST['tonkho']) && $_POST['tonkho']) ) {
+      (isset($_POST['sold']) && $_POST['sold']) && (isset($_POST['tonkho']) && $_POST['tonkho']) ) {
           $price = $_POST['price'];
           $size = $_POST['size'];
-          $sold = $_POST['daban'];
+          $sold = $_POST['sold'];
           $inventory = $_POST['tonkho'];
           $DetailProduct->insertDetailProduct($price,$size,$inventory,$sold,$id_sanpham);
       }
@@ -37,8 +37,8 @@
 
 
         <div class="form-group">
-            <label for="daban" class="form-label">Số lượng đã bán</label>
-            <input id="daban" name="daban" type="text" placeholder="Số lượng đã bán" class="form-control"
+            <label for="sold" class="form-label">Số lượng đã bán</label>
+            <input id="sold" name="sold" type="text" placeholder="Số lượng đã bán" class="form-control"
                 autocomplete="off" value = "0">
             <span class="form-message"></span>
         </div>
