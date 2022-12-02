@@ -48,7 +48,7 @@
         </div> -->
     </div>
 </div>
-<form action="" method="POST" class="nav" name="myForm">
+<form action="<?php echo Session::getValueSession('user') ? '' : 'index.php?quanly=login' ?>" method="POST" class="nav" name="myForm">
     <?php
         $i = 0;
         $product = $Product->getProductId($id_product);
