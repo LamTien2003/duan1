@@ -411,13 +411,14 @@ form button[type="submit"]:hover {
 }
 .checkbox {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .item-checkbox input  {
   display: none;
 }
 .item-checkbox label{
-  width: 40px;
+  width: 80px;
   height: 40px;
   border: 2px solid white;
   color: white;

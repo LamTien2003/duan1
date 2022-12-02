@@ -79,7 +79,7 @@
         ?>
     </div>
     <input type="text" hidden name="id_bill" value="<?php echo $row_bill['id_bill'] ?>">
-    <input type="text" hidden name="pointForUser" value="<?php echo $row_bill['total_pay'] * 10 / 100 ?>">
+    <input type="text" hidden name="pointForUser" value="<?php echo $row_bill['total_pay'] * 5 / 100 ?>">
 </form>
 
 <?php }   ?>
