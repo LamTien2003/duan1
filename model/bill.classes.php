@@ -42,8 +42,8 @@ class Bill extends DB {
         $stmt->execute([$address,$phone,$fullname,$status,$id_bill]);
         header("Location:index.php?quanly=admin&action=manageCart");
     }
-    public function updateStatusBill($id_bill) {
-        $sql = "UPDATE `bill` SET `status` = 2 WHERE `bill`.`id_bill` = $id_bill";
+    public function updateStatusBill($id_bill,$status) {
+        $sql = "UPDATE `bill` SET `status` = $status WHERE `bill`.`id_bill` = $id_bill";
         $stmt = $this->connect()->query($sql);
     }
     public function deleteBill($id) {

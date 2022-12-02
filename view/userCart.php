@@ -10,7 +10,7 @@
     if(isset($_POST['submit_done'])) {
         $id_bill = $_POST['id_bill'];
         $pointForUser = $_POST['pointForUser'];
-        $Bill->updateStatusBill($id_bill);
+        $Bill->updateStatusBill($id_bill,2);
         $User->addPointUser($pointForUser,$id_user);
     }
 
