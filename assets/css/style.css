@@ -813,3 +813,8 @@ textarea {
 .mb-0 {
     margin-bottom: 0% !important;
 }
+
+
+.menu-user {
+    padding: 0;
+}

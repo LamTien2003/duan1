@@ -175,7 +175,7 @@
         <div class="icon-list">
         <div class="icon">
             <div class="menu_icon">
-              <a href="#" class="">
+              <a href="index.php?quanly=<?php echo Session::getValueSession('user') ? 'giohang' : 'login' ?>" class="">
                 <!-- Cart Layout -->
                 <div class="header-cart">
                   <div class="header-cart-wrap">
