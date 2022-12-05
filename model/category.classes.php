@@ -2,7 +2,7 @@
 class Category extends DB {
     
     public function getCategorys() {
-        $sql = "Select * from category";
+        $sql = "Select * from category ORDER BY parent_id";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
@@ -20,6 +20,21 @@ class Category extends DB {
         $sql = "Select * from category WHERE parent_id = 0";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
+    }
+    public function getChildCategory($id_parent) {
+        $sql = "Select * from category WHERE parent_id = $id_parent";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
+    }
+    public function getArrChildCategoryByID($id_parent) {
+        $sql = "Select * from category WHERE parent_id = $id_parent";
+        $stmt = $this->connect()->query($sql);
+        $arr_fetch = $stmt->fetchAll();
+        $result = [];
+        foreach($arr_fetch as $item ) {
+            array_push($result,$item['id_category']);
+        }
+        return $result;
     }
     public function getArrayChildCategory($arr_parent) {
         $sql = "Select id_category from category WHERE parent_id = ";

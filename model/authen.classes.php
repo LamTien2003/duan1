@@ -1,5 +1,6 @@
 <?php
     include_once('./model/user.classes.php');
+    include_once('./mail/mail.php');
     class Authen {
 
         public function login($userName,$password) {
@@ -58,6 +59,32 @@
                 return;
             }else {
                 return "Tài khoản đã tồn tại";
+            }
+        }
+        public function sendRequest($userName,$email,$randomCode) {
+            $User = new User();
+            $id_user = $User->checkUserForgetPassword($userName,$email);
+            if($id_user) {
+                sendRequestCode($userName,$email,$randomCode);
+                return $id_user;
+            }else {
+                echo "
+                <SCRIPT> 
+                    alert('Thông tin không trùng khớp,vui lòng thử lại')
+                    window.location.replace('index.php?quanly=forgetPassword');
+                </SCRIPT>";
+            }
+            return;
+        }
+        public function verifyEmail($code,$randomCode) {
+            if($code == $randomCode) {
+                return;
+            }else {
+                echo "
+                <SCRIPT> 
+                    alert('Mã xác nhận không đúng, vui lòng thử lại')
+                    window.location.replace('index.php?quanly=forgetPassword');
+                </SCRIPT>";
             }
         }
     }

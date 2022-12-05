@@ -1,22 +1,25 @@
 <?php
   include_once('./model/product.classes.php');
   include_once('./model/detailProduct.classes.php');
+  include_once('./model/category.classes.php');
   $Product = new Product();
   $DetailProduct = new DetailProduct();
-
+  $Category = new Category();
+  $arrayIdCategory = [];
   if(isset($_GET['page'])) {
     $page = $_GET['page'];
   }else {
       $page = 1;
   }
-
   if($_GET['quanly'] == 'cuahang') {
     if(isset($_GET['id_category'])) {
         $id_category = $_GET['id_category'];
+        $arrayIdCategory = $Category->getArrChildCategoryByID($id_category);
+        array_push($arrayIdCategory,$id_category);
     }else {
-        $id_category = 0;
+      $id_category = 0;
     }
-}
+  }
 ?>
 
 <div class="banner">
@@ -37,22 +40,23 @@
         <div class="title-shop-left">CATEGORIES</div>
 
         <ul class="categories">
+          <?php
+            $listParentCategory = $Category->getCategorys();
+            foreach($listParentCategory as $row_parent_category) {
+          ?>
           <li class="categorie">
-            <input type="checkbox" name="category" class="categoryCheckbox" value="15" onchange="fetchAjaxHomePage()">
-            <label for="category" class="link-categorie">Bàn</label>
+            <input 
+              type="checkbox" 
+              name="category" 
+              class="categoryCheckbox" 
+              value="<?php echo $row_parent_category['id_category'] ?>" 
+              <?php echo $row_parent_category['id_category'] == $id_category ? 'checked' : '' ?>
+              onchange="fetchAjaxHomePage()"
+            >
+            <label for="category" class="link-categorie"><?php echo $row_parent_category['name_category'] ?></label>
           </li>
-          <li class="categorie">
-            <input type="checkbox" name="category" class="categoryCheckbox" value="19" onchange="fetchAjaxHomePage()">
-            <label for="category" class="link-categorie">Ghế</label>
-          </li>
-          <li class="categorie">
-            <input type="checkbox" name="category" class="categoryCheckbox" value="22" onchange="fetchAjaxHomePage()">
-            <label for="category" class="link-categorie">Tủ</label>
-          </li>
-          <li class="categorie">
-            <input type="checkbox" name="category" class="categoryCheckbox" value="27" onchange="fetchAjaxHomePage()">
-            <label for="category" class="link-categorie">Đồ trang trí</label>
-          </li>
+
+          <?php } ?>
           
         </ul>
       </div>
@@ -79,21 +83,27 @@
       <div class="container-size">
         <div class="title-shop-left">SIZE</div>
         <div class="checkbox">
-          <div class="item-checkbox">
-            <input type="checkbox" id="size" name ="size" value="'160x40'" 
-            onchange="fetchAjaxHomePage()">
-            <label for="size">160x40</label>
-          </div>
-          <div class="item-checkbox">
-            <input type="checkbox" id="size2" name ="size" value="'120x40'" 
-            onchange="fetchAjaxHomePage()" >
-            <label for="size2">120x40</label>
-          </div>
-          <div class="item-checkbox">
-            <input type="checkbox" id="size3" name ="size" value="'180x50'" 
-            onchange="fetchAjaxHomePage()" >
-            <label for="size3">180x50</label>
-          </div>
+          <?php
+            $listSize = $Product->getAllSizeAvaible(); 
+            $i = 1;
+            foreach($listSize as $row_size) {
+              
+          ?>
+            <div class="item-checkbox">
+              <input 
+                type="checkbox" 
+                id="<?php echo "size$i" ?>" 
+                name ="size" 
+                value="'<?php echo $row_size['detail_size'] ?>'" 
+                onchange="fetchAjaxHomePage()"
+              >
+              <label for="<?php echo "size$i" ?>"><?php echo $row_size['detail_size'] ?></label>
+            </div>
+          <?php 
+            $i++; 
+            } 
+          ?>
+        
                   
         </div>
         
@@ -141,10 +151,10 @@
     <div class="product-list-shop" id="result">
       <?php
           $productPerPage = 6;
-          $countProducts = $Product->getCountProductsByCategory($id_category);
+          $countProducts = $Product->getCountProductsByCategory($arrayIdCategory);
           $countPage = ceil($countProducts / $productPerPage);
           $start = ($page -1) * $productPerPage;
-          $productList = $Product->getProductsByCategory($id_category,$productPerPage);
+          $productList = $Product->getProductsByCategory($arrayIdCategory,$productPerPage);
           foreach($productList as $item) {                       
       ?>
         <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">

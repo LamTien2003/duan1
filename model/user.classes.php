@@ -55,6 +55,16 @@ class User extends DB {
         $stmt->execute([$fullName,$phone,$address,$email,$password,$id_user]);
         header("Location:index.php?quanly=user");
     }
+    public function changePasswordUser($password,$id_user) {
+        $sql = "UPDATE user SET user_password = ? WHERE id_user = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$password,$id_user]);
+        echo "
+        <SCRIPT> 
+            alert('Mật khẩu của bạn đã được đổi mới')
+            window.location.replace('index.php?quanly=login');
+        </SCRIPT>";
+    }
     public function deleteUser($id) {
         $sql = "DELETE FROM user WHERE id_user = ?";
         $stmt = $this->connect()->prepare($sql);
@@ -71,6 +81,16 @@ class User extends DB {
         $stmt->execute();
         $result = $stmt->fetchAll();
         return ["countTotalUser" => $countTotalUser, "data" => $result];
+    }
+    public function checkUserForgetPassword($userName,$email) {
+        $isCheck = false;
+        $sql = "Select * from User WHERE accountName_user = '$userName' AND user_email = '$email'";
+        $stmt = $this->connect()->query($sql);
+        $user = $stmt->fetchAll();
+        if($stmt->rowCount() >= 1) {
+            $isCheck = $user[0]['id_user'];
+        }
+        return $isCheck;
     }
 }
 ?>
