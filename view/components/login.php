@@ -14,7 +14,6 @@
 }
 
 ?>
-
 <div class="login">
   <h1 class="lg-title"><i class="fa-solid fa-circle-user"></i></h1>
   <form action="" method="POST">
