@@ -134,6 +134,7 @@
 <script src="./js/app.js"></script>
 <script src="./js/validate.js"></script>
 <script src="./js/search.js"></script>
+<script src="./js/login&signUp.js"></script>
 </html>
 
 <?php
