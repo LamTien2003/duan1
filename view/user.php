@@ -15,7 +15,7 @@
                 <div class="img"><img src="./assets/images/1.jpg" alt=""></div>
                 <div class="logo-info">
                     <h4 class="name"><?php echo $item['user_name'] ?></h4>
-                    <a href="" class="change-info">Sửa thông tin</a>
+                    <div class="point-available"><?php echo $item['point_available'] ?> Điểm thưởng hiện có</div>
                 </div>
             </div>
             <div class="info-user">

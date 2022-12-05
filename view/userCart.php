@@ -71,7 +71,7 @@
             <p class="total-pay">Tổng tiền phải trả: <?php echo number_format($row_bill['total_pay'], 0, '', '.') ?> đ</p>
         </div>
         <?php 
-            echo $row_bill['status'] != 2 ? 
+            echo $row_bill['status'] == 1 ? 
                 '<div class="total-submit">
                     <input type="submit" name="submit_done" value="Đã nhận được hàng"></input>
                 </div>' 

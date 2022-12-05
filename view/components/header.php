@@ -173,7 +173,7 @@ $Category = new Category();
         <a href="index.php?quanly=cuahang" class="menu_link">Khuyến mãi</a>
       </li>
       <li class="menu_item">
-        <a href="index.php?quanly=giohang" class="menu_link">Giỏ hàng</a>
+        <a href="index.php?quanly=<?php echo Session::getValueSession('user') ? 'giohang' : 'login' ?>" class="menu_link">Giỏ hàng</a>
       </li>
 
       <li class="menu_item">

@@ -259,6 +259,9 @@ tr {
 }
 
 .product-infor .product-title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     padding-top: 0;
 }
 
@@ -309,7 +312,6 @@ img {
 
 .product-infor .product-detail {
     float: left;
-    padding: 24px 0 0 20px;
 }
 
 .product-infor .post-title {
