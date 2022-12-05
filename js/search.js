@@ -80,7 +80,7 @@ function fetchAjax(searchType) {
     })
 }
 function fetchAjaxHomePage() {
-    const limit = 6;
+    const limit = 9;
     const page = $('input[name="nav"]:checked').val() || 1;
     const search = $('input[name="search"]').val();
     const range = $('input[name="range"]').val();
