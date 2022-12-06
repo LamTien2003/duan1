@@ -18,6 +18,8 @@
     $countAdmins=count($_SESSION['countAdmins']);
 // countBill
     $countBills = $Bill->getCountBills();
+
+    $countBillsDontAcp = $Bill->getCountBillsDontAcp();
 // countComment
     $countCmtDontAcp = $Comment->countCommmentsDontAccept();
     $_SESSION['countCmtDontAcp']=$countCmtDontAcp;
@@ -129,12 +131,31 @@
         <div class="cardBox">
             <div class="card">
                 <div>
-                    <div class="numbers"></div>
-                    <div class="cardName">Sản phẩm </div>
+                    <div class="numbers">
+                    <?php
+                    echo $countBillsDontAcp;
+                    ?>
+                    </div>
+                    <div class="cardName">Đơn hàng <b class="titleAdmin_fxl"> chưa duyệt</b></div>
                 </div>
 
                 <div class="iconBx">
                     <ion-icon name="eye-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">
+                    <?php
+                    echo $countBills;
+                    ?> 
+                    </div>
+                    <div class="cardName">Tổng đơn hàng </div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
                 </div>
             </div>
 
@@ -167,20 +188,7 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div>
-                    <div class="numbers">
-                    <?php
-                    echo $countBills;
-                    ?> 
-                    </div>
-                    <div class="cardName">Đơn hàng được đặt</div>
-                </div>
-
-                <div class="iconBx">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                </div>
-            </div>
+            
 
             <div class="card">
                 <div>
@@ -189,7 +197,7 @@
                         echo $countCmtDontAcp;
                     ?>
                     </div>
-                    <div class="cardName">Bình luận  <b class="titleAdmin_fxl"> chưa được duyệt</b></div>
+                    <div class="cardName">Bình luận  <b class="titleAdmin_fxl"> chưa duyệt</b></div>
                 </div>
 
                 <div class="iconBx">

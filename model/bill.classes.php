@@ -25,6 +25,11 @@ class Bill extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->rowCount();
     }
+    public function getCountBillsDontAcp() {
+        $sql = "Select * from bill where status = 0";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->rowCount();
+    }
     public function insertBill($address,$phone,$name,$pointUsed,$totalMoney,$totalPay) {
         $id_user = Session::getValueSession('user');
         $sql = "INSERT INTO `bill` (`delivery_address`, `receiver_phone`, `receiver_name`,
