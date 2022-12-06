@@ -36,7 +36,7 @@
           </button>
       </div>
     <div class="container-item">
-      <div class="container-categories">
+      <div class="container-categories"> 
         <div class="title-shop-left">Danh mục sản phẩm</div>
 
         <ul class="categories">
