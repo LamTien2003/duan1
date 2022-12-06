@@ -10,23 +10,13 @@
     $Comment = new Comment();
 // countUser
     $countUsers = $User->countUsers();
-    $_SESSION['countUsers']=$countUsers;
-    $countUsers=count($_SESSION['countUsers']);
-
     $countAdmins = $User->countAdmins();
-    $_SESSION['countAdmins']=$countAdmins;
-    $countAdmins=count($_SESSION['countAdmins']);
 // countBill
     $countBills = $Bill->getCountBills();
 
     $countBillsDontAcp = $Bill->getCountBillsDontAcp();
 // countComment
     $countCmtDontAcp = $Comment->countCommmentsDontAccept();
-    $_SESSION['countCmtDontAcp']=$countCmtDontAcp;
-    $countCmtDontAcp=count($_SESSION['countCmtDontAcp']);
-    
-
-
 
     // $countUser = getCountUsers();
     // $countSanpham = getCountProduct($connect);

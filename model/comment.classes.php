@@ -8,7 +8,7 @@ class Comment extends DB {
     public function countCommmentsDontAccept() {
         $sql = "Select * from comment where accept = 0";
         $stmt = $this->connect()->query($sql);
-        return $stmt->fetchAll();
+        return $stmt->rowCount();
     }
     public function getCommmentsOfProduct($id_product) {
         $sql = "Select * from comment WHERE id_product = $id_product AND accept = 1";
