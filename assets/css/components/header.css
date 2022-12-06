@@ -377,3 +377,20 @@ header .icon-list {
   opacity: 1;
   visibility: visible;
 }
+.fa-cart-shopping{
+  position: relative;
+}
+.numProCart{
+  text-align: center;
+    height: 15px;
+    border-radius: 50%;
+    color: white;
+    width: 16px;
+    background: red;
+    position: absolute;
+    top: -70%;
+    right: -60%;
+    font-size: small;
+    padding: 1px 2px 1px 1px;
+
+}
