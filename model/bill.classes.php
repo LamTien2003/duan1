@@ -75,5 +75,15 @@ class Bill extends DB {
         $result = $stmt->fetchAll();
         return ["countTotalBill" => $countTotalBill, "data" => $result];
     }
+    public function getDataChart() {
+        $result = [];
+        $sql = "SELECT COUNT(*) as soluong,DATE_FORMAT(date_pay,'%d/%m/%Y') as ngay from `bill` GROUP BY date_pay";
+        $stmt = $this->connect()->query($sql);
+        $fetchResult = $stmt->fetchAll();
+        // foreach($fetchResult as $item) {
+
+        // }
+        return $fetchResult;
+    }
 }
 ?>

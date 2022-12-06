@@ -9,7 +9,7 @@ header {
   background: rgba(0, 0, 0, 0) url(../images/banner\ about.webp) no-repeat
     scroll center center/cover;
   padding-top: 20%;
-  margin-top: 90px;
+  margin-top: var(--header-height);
 }
 .banner::before {
   background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;

@@ -4,7 +4,7 @@ header {
 }
 .slider-item {
     position:  relative;
-    margin-top: 90px;
+    margin-top: var(--header-height);
 }
 .slider-image {
     width: 100%;

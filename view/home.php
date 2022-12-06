@@ -1,38 +1,24 @@
 <?php
 include_once('./model/product.classes.php');
+include_once('./model/slider.classes.php');
 $Product = new Product();
+$Slider = new Slider();
 ?>
 <div class="slider">
+    <?php
+        $sliderList = $Slider->getSliders();
+        foreach($sliderList as $row_slider) {
+    ?>
     <div class="slider-item">
-        <img src="./assets/images/slider 1.webp" alt="" class="slider-image">
+        <img src="<?php echo $row_slider['slider_img'] ?>" alt="" class="slider-image">
         <div class="text">
-            <p class="subtitle">CHÀO MỪNG ĐẾN VỚI CHÚNG TÔI</p>
-            <p class="title">NỘI THẤT <br> CAO CẤP</p>
-            <p class="description">Nội thất FUHO là thương hiệu nội thất văn phòng chính hãng hàng đầu Việt Nam, chuyên sản xuất và cung ứng nội thất cho hàng ngàn công ty, văn phòng, cá nhân trên cả nước.
-                Dựa trên ý tưởng cốt lõi: “Like a boss” FUHO cam kết giúp khách hàng chọn lựa được những sản phẩm có chất lượng vượt bậc với giá thành hợp lý nhất.
-                Hãy trải nghiệm cảm giác “Như một ông chủ” thực thụ khi sử dụng sản phẩm và dịch vụ chính hãng của chúng tôi.</p>
-            <a href="#" class="btn-shopping">MUA NGAY</a>
+            <p class="subtitle"><?php echo $row_slider['slider_subtitle'] ?></p>
+            <p class="title"><?php echo $row_slider['slider_title'] ?></p>
+            <p class="description"><?php echo $row_slider['description'] ?></p>
+            <a href="<?php echo $row_slider['slider_link'] ?>" class="btn-shopping">MUA NGAY</a>
         </div>
     </div>
-    <div class="slider-item">
-        <img src="./assets/images/slider 2.webp" alt="" class="slider-image">
-        <div class="text">
-            <p class="subtitle">CHÀO MỪNG ĐẾN VỚI CHÚNG TÔI</p>
-            <p class="title">NỘI THẤT <br> CAO CẤP</p>
-            <p class="description">Nội thất FUHO là thương hiệu nội thất văn phòng chính hãng hàng đầu Việt Nam, chuyên sản xuất và cung ứng nội thất cho hàng ngàn công ty, văn phòng, cá nhân trên cả nước.
-                Dựa trên ý tưởng cốt lõi: “Like a boss” FUHO cam kết giúp khách hàng chọn lựa được những sản phẩm có chất lượng vượt bậc với giá thành hợp lý nhất.
-                Hãy trải nghiệm cảm giác “Như một ông chủ” thực thụ khi sử dụng sản phẩm và dịch vụ chính hãng của chúng tôi.</p>
-            <a href="#" class="btn-shopping">MUA NGAY</a>
-        </div>
-    </div>
-    <div class="slider-item">
-        <img src="./assets/images/slider 1.webp" alt="" class="slider-image">
-        <div class="text">
-            <p class="subtitle">CHÀO MỪNG ĐẾN VỚI CHÚNG TÔI</p>
-            <p class="title">NỘI THẤT CAO CẤP</p>
-            <a href="#" class="btn-shopping">MUA NGAY</a>
-        </div>
-    </div>
+    <?php }?>
 </div>
 <div class="main">
     <div class="category-container">

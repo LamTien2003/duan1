@@ -1,7 +1,7 @@
 <?php
 class Slider extends DB {
     public function getSliders() {
-        $sql = "SELECT * FROM `slider`";
+        $sql = "SELECT * FROM `slider` ORDER BY `slider`.`order` ASC";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }

@@ -30,7 +30,7 @@ class Product extends DB {
     }
     public function getBestSellerProducts($limit) {
         $sql = "Select * from product INNER JOIN detailproduct ON product.id_product = detailproduct.id_product 
-        GROUP BY product.id_product ORDER BY sum(detailproduct.sold) ASC LIMIT $limit";
+        GROUP BY product.id_product ORDER BY sum(detailproduct.sold) DESC LIMIT $limit";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }

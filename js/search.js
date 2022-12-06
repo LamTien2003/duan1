@@ -133,7 +133,6 @@ function fetchAjaxHomePage() {
             }
             $('#result').html(html);
             $('.pagination').html(htmlPagination)
-            console.log(newData)
         },
     })
 }

@@ -60,6 +60,16 @@ class Category extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->rowCount();
     }
+    public function getBestSellerCategory($limit) {
+        $sql = "Select category.name_category, sum(detailproduct.sold) as sold from product 
+        INNER JOIN detailproduct ON product.id_product = detailproduct.id_product 
+        INNER JOIN category ON product.id_category = category.id_category 
+        GROUP BY product.id_category,detailproduct.id_product 
+        ORDER BY sum(detailproduct.sold) DESC 
+        LIMIT $limit";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
+    }
     public function insertCategory($image,$title,$order,$parentId) {
         $targetFile = $this->addImageToFolder($image);
         if($targetFile) {
@@ -97,5 +107,6 @@ class Category extends DB {
         $result = $stmt->fetchAll();
         return ["countTotalCategory" => $countTotalCategory, "data" => $result];
     }
+    
 }
 ?>
