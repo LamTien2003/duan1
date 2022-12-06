@@ -17,6 +17,16 @@ class User extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
+    public function countUsers() {
+        $sql = "Select * from user where user_role = 0";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->rowCount();
+    }
+    public function countAdmins() {
+        $sql = "Select * from user where user_role = 1";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->rowCount();
+    }
     public function getCountUsers() {
         $sql = "Select * from user";
         $stmt = $this->connect()->query($sql);

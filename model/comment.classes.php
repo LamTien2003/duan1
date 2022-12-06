@@ -5,6 +5,11 @@ class Comment extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
+    public function countCommmentsDontAccept() {
+        $sql = "Select * from comment where accept = 0";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->rowCount();
+    }
     public function getCommmentsOfProduct($id_product) {
         $sql = "Select * from comment WHERE id_product = $id_product AND accept = 1";
         $stmt = $this->connect()->query($sql);
