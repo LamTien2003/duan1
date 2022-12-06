@@ -309,7 +309,7 @@ img {
 
 .product-infor .product-detail {
     float: left;
-    padding: 24px 0 0 20px;
+    padding: 15px 0 0 29px;
 }
 
 .product-infor .post-title {
@@ -359,7 +359,7 @@ img {
 
 .table-content table td.product-infor {
     padding-left: 0;
-    width: 330px;
+    width: 370px;
 }
 
 .border-line {

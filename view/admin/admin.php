@@ -1,6 +1,32 @@
 <?php
     // include_once('./model/admin.php');
-    // $countUser = getCountUser($connect);
+    ob_start();
+    include_once('./model/db.classes.php');
+    include_once('./model/user.classes.php');
+    include_once('./model/bill.classes.php');
+    include_once('./model/comment.classes.php');
+    $User = new User();
+    $Bill = new Bill();
+    $Comment = new Comment();
+// countUser
+    $countUsers = $User->countUsers();
+    $_SESSION['countUsers']=$countUsers;
+    $countUsers=count($_SESSION['countUsers']);
+
+    $countAdmins = $User->countAdmins();
+    $_SESSION['countAdmins']=$countAdmins;
+    $countAdmins=count($_SESSION['countAdmins']);
+// countBill
+    $countBills = $Bill->getCountBills();
+// countComment
+    $countCmtDontAcp = $Comment->countCommmentsDontAccept();
+    $_SESSION['countCmtDontAcp']=$countCmtDontAcp;
+    $countCmtDontAcp=count($_SESSION['countCmtDontAcp']);
+    
+
+
+
+    // $countUser = getCountUsers();
     // $countSanpham = getCountProduct($connect);
     // $countGiohang = getCountOrder($connect);
 ?>
@@ -15,7 +41,7 @@
                 <img  src="./assets/images/fuho_logo.png" alt="" class="logo">
             </li>
             <li>
-                <a href="#">
+                <a href="?quanly=admin&action=overview">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
@@ -81,7 +107,7 @@
                     <span class="icon">
                         <ion-icon name="log-out-outline"></ion-icon>
                     </span>
-                    <span class="title">Sign Out</span>
+                    <span class="title">Đăng xuất </span>
                 </a>
             </li>
         </ul>
@@ -104,7 +130,7 @@
             <div class="card">
                 <div>
                     <div class="numbers"></div>
-                    <div class="cardName">Sản phẩm</div>
+                    <div class="cardName">Sản phẩm </div>
                 </div>
 
                 <div class="iconBx">
@@ -113,9 +139,27 @@
             </div>
 
             <div class="card">
-                <div>
-                    <div class="numbers"></div>
-                    <div class="cardName">Users</div>
+                <div >
+                    <div class="numbers">
+                    <?php
+                    echo $countUsers
+                    ?></div>
+                    <div class="cardName">Số tài khoản <b class="titleAdmin_fxl">Users</b></div>
+
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div >
+                    <div class="numbers">
+                    <?php
+                    echo $countAdmins
+                    ?></div>
+                    <div class="cardName">Số tài khoản <b class="titleAdmin_fxl">Admin</b></div>
+
                 </div>
 
                 <div class="iconBx">
@@ -125,8 +169,27 @@
 
             <div class="card">
                 <div>
-                    <div class="numbers"></div>
+                    <div class="numbers">
+                    <?php
+                    echo $countBills;
+                    ?> 
+                    </div>
                     <div class="cardName">Đơn hàng được đặt</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">
+                    <?php
+                        echo $countCmtDontAcp;
+                    ?>
+                    </div>
+                    <div class="cardName">Bình luận  <b class="titleAdmin_fxl"> chưa được duyệt</b></div>
                 </div>
 
                 <div class="iconBx">
@@ -146,6 +209,7 @@
                 <?php
                     if(isset($_GET['action']) && $_GET['action']) {
                         switch($_GET['action']) {
+                            case 'overview': include_once('adminOverview.php'); break;
                             case 'manageUser': include_once('adminManageUser.php'); break;
                             case 'manageSlider': include_once('adminManageSlider.php'); break;
                             case 'manageProduct' : include_once('adminManageProduct.php'); break;
@@ -167,7 +231,7 @@
                             case 'insertCategory' : include_once('adminInsertCategory.php'); break;
                         }
                     }else {
-                        include_once('adminManageUser.php');
+                        include_once('adminOverview.php');
                     }
                 ?>
                 
