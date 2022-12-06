@@ -29,7 +29,7 @@
   <form action="#" method="post" class="container-shop-left">
     <form class="container-item">
       <div class="container-search">
-          <input type="text" name="search" id="search-product-homepage" placeholder="Search here..."
+          <input type="text" name="search" id="search-product-homepage" placeholder="Tìm kiếm tại đây...."
           onchange="fetchAjaxHomePage()" />
           <button type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -37,7 +37,7 @@
       </div>
     <div class="container-item">
       <div class="container-categories">
-        <div class="title-shop-left">CATEGORIES</div>
+        <div class="title-shop-left">Danh mục sản phẩm</div>
 
         <ul class="categories">
           <?php
@@ -63,9 +63,9 @@
     </div>
     <div class="container-item">
       <div class="container-filter">
-        <div class="title-shop-left">PRICE</div>
+        <div class="title-shop-left">Giá</div>
         <div class="price-amount">
-          <h5>You ranger: </h5>
+          <h5>Khoảng giá: </h5>
           <div class="section-item fillter">
                 <input class="range" type="range" name ="range" min="0" max="10000000" value="1000000000" step="10000"
                     onmousemove="rangevalue1.value=nf.format(value)"
@@ -81,7 +81,7 @@
 
     <div class="container-item">
       <div class="container-size">
-        <div class="title-shop-left">SIZE</div>
+        <div class="title-shop-left">Kích thước</div>
         <div class="checkbox">
           <?php
             $listSize = $Product->getAllSizeAvaible(); 
@@ -150,7 +150,7 @@
 
     <div class="product-list-shop" id="result">
       <?php
-          $productPerPage = 6;
+          $productPerPage = 9;
           $countProducts = $Product->getCountProductsByCategory($arrayIdCategory);
           $countPage = ceil($countProducts / $productPerPage);
           $start = ($page -1) * $productPerPage;
