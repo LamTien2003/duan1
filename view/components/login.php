@@ -14,7 +14,6 @@
 }
 
 ?>
-
 <div class="login">
   <h1 class="lg-title"><i class="fa-solid fa-circle-user"></i></h1>
   <form action="" method="POST">
@@ -31,15 +30,15 @@
       <div class="form-message"></div>
     </div>
     <div class="link-pass">
-      <a href="index.php?quanly=forgetpassword">
-        <div class="pass">Forgot Password?</div>
+      <a href="index.php?quanly=forgetPassword">
+        <div class="pass">Quên mật khẩu ?</div>
       </a>
     </div>
 
     <input id="checklogin" class="btn-login form-submit" type="submit" name="submit_login" value="Login"></input>
     <div class="signup-link">
-      Not a member?
-      <a href="index.php?quanly=register">Sign up</a>
+      Bạn chưa có tài khoản
+      <a href="index.php?quanly=register">Đăng ký</a>
     </div>
   </form>
 </div>

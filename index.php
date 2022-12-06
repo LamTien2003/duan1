@@ -46,6 +46,15 @@
                     case 'login': 
                         echo '<link rel="stylesheet" href="./assets/css/login.css">';
                     break;
+                    case 'forgetPassword': 
+                        echo '<link rel="stylesheet" href="./assets/css/login.css">';
+                    break;
+                    case 'verifyEmail': 
+                        echo '<link rel="stylesheet" href="./assets/css/login.css">';
+                    break;
+                    case 'changeNewPassWord': 
+                        echo '<link rel="stylesheet" href="./assets/css/login.css">';
+                    break;
                     case 'register': 
                         echo '<link rel="stylesheet" href="./assets/css/register.css">';
                     break;
@@ -68,6 +77,9 @@
             case 'admin': ''; break;
             case 'login': ''; break;
             case 'register': ''; break;
+            case 'forgetPassword': ''; break;
+            case 'verifyEmail': ''; break;
+            case 'changeNewPassWord': ''; break;
             default: {
                 include_once './view/components/header.php';
                 break;
@@ -84,6 +96,9 @@
           case 'chitiet': include_once './view/chitietsp.php'; break; 
           case 'login': include_once './view/components/login.php'; break; 
           case 'register': include_once './view/components/register.php'; break; 
+          case 'forgetPassword': include_once './view/components/forgetpassword.php'; break; 
+          case 'verifyEmail': include_once './view/components/verifyEmail.php'; break; 
+          case 'changeNewPassWord': include_once './view/components/changeNewPassWord.php'; break; 
           case 'admin': include_once './view/admin/admin.php'; break; 
           case 'user': include_once './view/user.php'; break; 
 
@@ -97,6 +112,9 @@
             case 'admin': ''; break;
             case 'login': ''; break;
             case 'register': ''; break;
+            case 'forgetPassword': ''; break;
+            case 'verifyEmail': ''; break;
+            case 'changeNewPassWord': ''; break;
             default: {
                 include_once './view/components/footer.php';
                 break;
@@ -116,6 +134,7 @@
 <script src="./js/app.js"></script>
 <script src="./js/validate.js"></script>
 <script src="./js/search.js"></script>
+<script src="./js/login&signUp.js"></script>
 </html>
 
 <?php

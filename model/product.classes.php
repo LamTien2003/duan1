@@ -34,17 +34,50 @@ class Product extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
-    public function getProductsByCategory($id_category,$limit) {
-        $condition = $id_category != 0 ? "HAVING id_category = $id_category LIMIT $limit" : "HAVING 1 LIMIT $limit";
+    public function getProductsByCategory($listIDCategory,$limit) {
+        $condition = "HAVING ";
+        if(count($listIDCategory) > 1 ) {
+            for($i = 0; $i < count($listIDCategory) ; $i++) {
+                if($i == 0) {
+                    $condition .= "id_category = $listIDCategory[$i] ";
+                }else {
+                    $condition .= "OR id_category = $listIDCategory[$i] ";
+                }
+            }
+        }else if(count($listIDCategory) == 1) {
+            $condition .= "id_category = $listIDCategory[0] ";
+        }else {
+            $condition .= "1";
+        }
+        $condition .= " LIMIT $limit";
         $sql = "Select * from product INNER JOIN detailproduct ON product.id_product = detailproduct.id_product GROUP BY product.id_product $condition";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
-    public function getCountProductsByCategory($id_category) {
-        $condition = $id_category != 0 ? "WHERE id_category = $id_category" : "WHERE 1";
+    public function getCountProductsByCategory($listIDCategory) {
+        $condition = "WHERE ";
+        if(count($listIDCategory) > 1 ) {
+            for($i = 0; $i < count($listIDCategory) ; $i++) {
+                if($i == 0) {
+                    $condition .= "id_category = $listIDCategory[$i] ";
+                }else {
+                    $condition .= "OR id_category = $listIDCategory[$i] ";
+                }
+            }
+        }else if(count($listIDCategory) == 1) {
+            $condition .= "id_category = $listIDCategory[0] ";
+        }else {
+            $condition .= "1";
+        }
+
         $sql = "Select * from product $condition";
         $stmt = $this->connect()->query($sql);
         return $stmt->rowCount();
+    }
+    public function getAllSizeAvaible() {
+        $sql = "SELECT * FROM `detailproduct` GROUP BY detail_size";
+        $stmt = $this->connect()->query($sql);
+        return $stmt->fetchAll();
     }
     public function insertProduct ($title,$image,$hot,$subTitle,$category,$description) {
         $targetFile = $this->addImageToFolder($image);

@@ -56,11 +56,11 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="product-infor">Product</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
-                                    <th class="product-remove">Remove</th>
+                                    <th class="product-infor">Sản phẩm</th>
+                                    <th class="product-price">Giá</th>
+                                    <th class="product-quantity">Số lượng</th>
+                                    <th class="product-subtotal">Tổng</th>
+                                    <th class="product-remove">Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -130,29 +130,29 @@
     <div class="nav">
         <div class="nav-box">
             <div class="nav-child" style="width: 48.5%; padding-right: 2.5%;">
-                <h4 class="title-coupon border-line">coupon discount</h4>
-                <p class="text-titile">Enter your coupon code if you have one!</p>
+                <h4 class="title-coupon border-line">Thông tin đặt hàng</h4>
+                <p class="text-titile">Nhập đầy đủ các thông tin cá nhân của bạn</p>
                 
                 <div class="form-group">
                     <label for="username" class="form-label">Tên người nhận</label>
-                    <input type="text" name="username" placeholder="Enter your code here." class="coupon form-control">
+                    <input type="text" name="username" placeholder="Nhập tên người nhận" class="coupon form-control">
                     <div class="form-message"></div>
                 </div>
                 <div class="form-group">
                     <label for="phone" class="form-label">Số điện thoại người nhận</label>
-                    <input type="text" name="phone" placeholder="Enter your code here." class="coupon form-control">
+                    <input type="text" name="phone" placeholder="Nhập số điện thoại" class="coupon form-control">
                     <div class="form-message"></div>
                 </div>
                 <div class="form-group">
                     <label for="address" class="form-label">Địa chỉ giao hàng</label>
-                    <input type="text" name="address" placeholder="Enter your code here." class="coupon form-control">
+                    <input type="text" name="address" placeholder="Nhập địa chỉ giao hàng" class="coupon form-control">
                     <div class="form-message"></div>
                 </div>
             </div>
             <div class="nav-mid"></div>
             <div class="nav-child payment">
         
-                    <h4 class="title-coupon border-line">payment details</h4>
+                    <h4 class="title-coupon border-line">Thông tin hóa đơn</h4>
                     <table class="table-spc">
                         <tbody>
                             <tr>

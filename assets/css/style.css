@@ -259,6 +259,9 @@ tr {
 }
 
 .product-infor .product-title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     padding-top: 0;
 }
 
@@ -812,4 +815,9 @@ textarea {
 
 .mb-0 {
     margin-bottom: 0% !important;
+}
+
+
+.menu-user {
+    padding: 0;
 }

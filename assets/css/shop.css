@@ -412,7 +412,10 @@ form button[type="submit"]:hover {
 .checkbox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+}
+.item-checkbox {
+  width: 33%;
 }
 .item-checkbox input  {
   display: none;

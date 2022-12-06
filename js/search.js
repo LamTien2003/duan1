@@ -80,7 +80,7 @@ function fetchAjax(searchType) {
     })
 }
 function fetchAjaxHomePage() {
-    const limit = 6;
+    const limit = 9;
     const page = $('input[name="nav"]:checked').val() || 1;
     const search = $('input[name="search"]').val();
     const range = $('input[name="range"]').val();
@@ -198,6 +198,16 @@ function renderCategory (list) {
 }
 function renderBill (list) {
     return list.map((item) => {
+        let status;
+        let link = '';
+        if(item.status == 0) {
+            status = "Chờ xác nhận";
+            link = `<a href='?quanly=admin&action=manageCart&updateStatus=${item.id_bill}'class='status inProgress'>Duyệt</a>`
+        }else if(item.status == 1) {
+            status = "Đang giao";
+        }else {
+            status = "Đã giao";
+        }
         return `<tr>
                     <td>${item.id_bill}</td>
                     <td>${item.id_user}</td>
@@ -207,8 +217,10 @@ function renderBill (list) {
                     <td>${item.payment_method}</td>
                     <td>${item.point_used}</td>
                     <td>${item.total_pay}</td>
-                    <td>${item.status}</td>
-                    <td><a href="?quanly=admin&action=detailCart&id_giohang=${item.id_bill}" class="status delivered">Xem chi tiết</a>
+                    <td>${status}</td>
+                    <td>
+                        <a href="?quanly=admin&action=detailCart&id_giohang=${item.id_bill}" class="status delivered">Xem chi tiết</a>
+                        ${link ? link: ''} 
                         <a href="?quanly=admin&action=changeCart&id_giohang=${item.id_bill}" class="status pending">Sửa</a>
                         <a href="?quanly=admin&action=manageCart&delete_giohang=${item.id_bill}" class="status return">Xóa</a>
                     </td>
