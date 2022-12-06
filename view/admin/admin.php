@@ -119,20 +119,21 @@
 
         <!-- ======================= Cards ================== -->
         <div class="cardBox">
-            <div class="card">
-                <div>
-                    <div class="numbers">
-                    <?php
-                    echo $countBillsDontAcp;
-                    ?>
+            <a href="?quanly=admin&action=manageCart" class="btn btn_n">
+                <div class="card">
+                    <div>
+                        <div class="numbers">
+                        <?php
+                        echo $countBillsDontAcp;
+                        ?>
+                        </div>
+                        <div class="cardName">Đơn hàng <b class="titleAdmin_fxl"> chưa duyệt</b></div>
                     </div>
-                    <div class="cardName">Đơn hàng <b class="titleAdmin_fxl"> chưa duyệt</b></div>
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
                 </div>
-
-                <div class="iconBx">
-                    <ion-icon name="eye-outline"></ion-icon>
-                </div>
-            </div>
+            </a>
 
             <div class="card">
                 <div>
@@ -149,6 +150,7 @@
                 </div>
             </div>
 
+            
             <div class="card">
                 <div >
                     <div class="numbers">
@@ -179,21 +181,22 @@
             </div>
 
             
-
-            <div class="card">
-                <div>
-                    <div class="numbers">
-                    <?php
-                        echo $countCmtDontAcp;
-                    ?>
+            <a href="?quanly=admin&action=manageComment" class="btn btn_n">
+                <div class="card">
+                    <div>
+                        <div class="numbers">
+                        <?php
+                            echo $countCmtDontAcp;
+                        ?>
+                        </div>
+                        <div class="cardName">Bình luận  <b class="titleAdmin_fxl"> chưa duyệt</b></div>
                     </div>
-                    <div class="cardName">Bình luận  <b class="titleAdmin_fxl"> chưa duyệt</b></div>
-                </div>
 
-                <div class="iconBx">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
                 </div>
-            </div>
+            </a>
 
         </div>
 

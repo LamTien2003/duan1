@@ -336,6 +336,9 @@ body {
   color: var(--white);
   border-radius: 6px;
 }
+.btn_n{
+  background: none ;
+}
 
 .details table {
   width: 100%;
