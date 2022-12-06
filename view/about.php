@@ -20,8 +20,25 @@
                     <div class="member-item">
                         <img src="assets/images/lamtien.jpg" alt="" class="avatar">
                         <h4 class="name">Lâm Thành Tiến</h4>
-                        <p class="position">Chức vụ: Vua</p>
-                        <p class="description">There are many variations of passage of Lorem Ipsum available, but the in majority have suffered.</p>
+                        <p class="position">Chức vụ: Nhà sản xuất</p>
+                        <p class="description">Ông là một người chuyên sản xuất nhưng sản phẩm về nội thất cao cấp với 10 năm kinh nghiệm được trau dồi theo thời gian.</p>
+                        <div class="social">
+                            <a href="#" class="social-media">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-media">
+                                <i class="fa-sharp fa-solid fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-media">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="member-item">
+                        <img src="assets/images/anhquoc.jpg" alt="" class="avatar">
+                        <h4 class="name">Lê Anh Quốc</h4>
+                        <p class="position">Chức vụ: Nhà sáng lập</p>
+                        <p class="description">Ông là một người sáng lập ra FUHO SHOP với bản chất lãnh đạo và chiến lược tốt ông đã đem FUHO lên một tầm cao mới.</p>
                         <div class="social">
                             <a href="#" class="social-media">
                                 <i class="fa-brands fa-facebook"></i>
@@ -36,26 +53,9 @@
                     </div>
                     <div class="member-item">
                         <img src="assets/images/lamtien.jpg" alt="" class="avatar">
-                        <h4 class="name">Lâm Thành Tiến</h4>
-                        <p class="position">Chức vụ: Vua</p>
-                        <p class="description">There are many variations of passage of Lorem Ipsum available, but the in majority have suffered.</p>
-                        <div class="social">
-                            <a href="#" class="social-media">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>
-                            <a href="#" class="social-media">
-                                <i class="fa-sharp fa-solid fa-envelope"></i>
-                            </a>
-                            <a href="#" class="social-media">
-                                <i class="fa-solid fa-phone"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="member-item">
-                        <img src="assets/images/lamtien.jpg" alt="" class="avatar">
-                        <h4 class="name">Lâm Thành Tiến</h4>
-                        <p class="position">Chức vụ: Vua</p>
-                        <p class="description">There are many variations of passage of Lorem Ipsum available, but the in majority have suffered.</p>
+                        <h4 class="name">Trần Trung Hiếu</h4>
+                        <p class="position">Chức vụ: Nhà Phân Phối</p>
+                        <p class="description">Ông đã đưa các sản phẩm của FUHO phân phối trong và ngoài nước với chiến lược logictis hiệu quả.</p>
                         <div class="social">
                             <a href="#" class="social-media">
                                 <i class="fa-brands fa-facebook"></i>

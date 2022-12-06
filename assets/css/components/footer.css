@@ -112,3 +112,17 @@ footer{
     background-color: var(--primary-color);
     color: var(--third-color);
   }
+
+  .social-footer i{
+    margin: auto;
+    font-size: 3rem;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .social-footer i:hover{
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    transition: all 0.3s linear;
+  }

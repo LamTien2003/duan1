@@ -24,7 +24,7 @@
     margin: 15px 0 25px 0;
     font-size: 6rem;
     font-weight: 900;
-    line-height: 65px;
+    line-height: 80px;
     color: #434343;
 }
 .slider-item .description {
@@ -107,7 +107,7 @@
   background-color: var(--primary-color);
 }
 /* Custom animation Slider */
-/* .slick-active .text .subtitle {
+/* .slick-active .text .subee {
   animation: fadeInOut linear 0.4s;
 } */
 

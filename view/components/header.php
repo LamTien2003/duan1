@@ -252,6 +252,8 @@ $Category = new Category();
         <a href="index.php?quanly=<?php echo Session::getValueSession('user') ? 'user' : 'login' ?>" class="menu_link <?php echo Session::getValueSession('user') ? 'login-success' : '' ?>">
           <i class="fa-solid fa-user"></i>
         </a>
+      
+      
         <?php
         if (Session::getValueSession('user')) {
           $id_user = Session::getValueSession('user');

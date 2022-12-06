@@ -45,15 +45,15 @@ Sản phẩm yêu thích</a></li>
         <div class="footer-shipping">
           <ul>
            <li><a href="" class="ft-ac-link"
-        >New Products</a></li>
+        >Sản phẩm mới</a></li>
 
-           <li><a href="" class="ft-ac-link">Top Sellers</a></li>
+           <li><a href="" class="ft-ac-link">Khuyến mãi</a></li>
 
-           <li><a href="" class="ft-ac-link">Manufacturers</a></li>
+           <li><a href="" class="ft-ac-link">Sản phẩm đặc biệt</a></li>
+           <li><a href="" class="ft-ac-link">Nhà sản xuất</a></li>
 
-           <li><a href="" class="ft-ac-link">Suppliers</a></li>
+           <li><a href="" class="ft-ac-link">Nhà cung cấp</a></li>
 
-           <li><a href="" class="ft-ac-link">Specials</a></li>
           </ul>
         </div>
       </div>
@@ -63,12 +63,12 @@ Sản phẩm yêu thích</a></li>
       <div class="single-footer">
         <div class="footer-title">nhận tin tức từ chúng tôi?</div>
         <div class="footer-subscribe">
-          <form action="#">
-            <input type="text" name="email" placeholder="Địa chỉ Email ...">
-            <button class="btn-subscribe" type="submit">
-                Đăng ký
-            </button>
-          </form>
+        <div class="social-footer">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-behance-square"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
         </div>
       </div>
     </footer>
