@@ -36,7 +36,7 @@
 <div class="heading-banner overlay-bg">
     <div class="container">
         <div class="heading-banner-title">
-            <h2>Shopping Cart</h2>
+            <h2>Giỏ hàng</h2>
         </div>
         <!-- <div class="accessPlace pb-15">
             <ul>

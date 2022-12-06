@@ -102,7 +102,7 @@
                 <!-- <div style="width:20% ;"></div> -->
                 <div class="product-box-btn">
                     <!-- <button type="submit" class="btn">APPLY COUPY</button> -->
-                    <input type="submit" class="btn" name="themgiohang" id="" value="Add to Cart">
+                    <input type="submit" class="btn" name="themgiohang" id="" value="Thêm vào giỏ hàng">
                 </div>
             </div>
             <input type="text" hidden name="img_product" value="<?php echo $item['img_product'] ?>">
@@ -117,7 +117,7 @@
 <div class="nav">
     <!-- <div class="nav-box"> -->
         <div class="nav-child">
-            <h4 class="title-coupon border-line mb-0">CUSTOMER REVIEW</h4>
+            <h4 class="title-coupon border-line mb-0">Bình luận</h4>
             <?php 
                 $listComment = $Comment->getCommmentsOfProduct($id_product);
                 foreach($listComment as $row_comment) {
@@ -141,12 +141,12 @@
             <?php } } ?>
         </div>
         <div class="nav-child pt-0 pb-0">
-            <h4 class="title-coupon border-line mb-0">Leave your review</h4>
+            <h4 class="title-coupon border-line mb-0">Để lại bình luận của bạn</h4>
             <form action="" method="POST">
                 <div class="nav-box pt-0 pb-0 mt-5">
                     <div class="nav-child w100 pt-0 pb-0">
-                        <textarea class="custom-textarea" name="message" placeholder="Your review here..."></textarea>
-                        <input type="submit" class="btn mt-5 mb-5 color-btn" name="submit_comment" id="" value="Submit Review">
+                        <textarea class="custom-textarea" name="message" placeholder="Nhập bình luận của bạn..."></textarea>
+                        <input type="submit" class="btn mt-5 mb-5 color-btn" name="submit_comment" id="" value="Gửi">
                     </div>
                 </div>
             </form>

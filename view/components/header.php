@@ -129,7 +129,7 @@ $Category = new Category();
 
 
       <li class="menu_item">
-        <a href="index.php?quanly=cuahang" class="menu_link">Cửa hàng<i class="fa-solid fa-angle-down"></i></a>
+        <a href="index.php?quanly=cuahang" class="menu_link">Bộ sưu tập<i class="fa-solid fa-angle-down"></i></a>
         <div class="menu_child">
           <div class="menu_child_item">
             <ul class="menu_child_list">
@@ -170,7 +170,7 @@ $Category = new Category();
 
       </li>
       <li class="menu_item">
-        <a href="index.php?quanly=cuahang" class="menu_link">Khuyến mãi</a>
+        <a href="index.php?quanly=cuahang" class="menu_link">Cửa hàng</a>
       </li>
       <li class="menu_item">
         <a href="index.php?quanly=<?php echo Session::getValueSession('user') ? 'giohang' : 'login' ?>" class="menu_link">Giỏ hàng</a>
@@ -251,6 +251,16 @@ $Category = new Category();
       <div class="icon icon-user">
         <a href="index.php?quanly=<?php echo Session::getValueSession('user') ? 'user' : 'login' ?>" class="menu_link <?php echo Session::getValueSession('user') ? 'login-success' : '' ?>">
           <i class="fa-solid fa-user"></i>
+          <?php
+          if (Session::getValueSession('user')) {
+            $id_user = Session::getValueSession('user');
+            $row_user = $User->getUserId($id_user);
+            // echo var_dump($row_user);
+            foreach ($row_user as $item ) {
+              echo $item['user_name'];
+            }
+          }
+          ?>
         </a>
         <?php
         if (Session::getValueSession('user')) {

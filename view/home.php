@@ -59,7 +59,7 @@
         </div>
         <div class="featured-container">
             <div class="container">
-                <h2 class="title">Featured Products</h2>
+                <h2 class="title">Sản phẩm nổi bật</h2>
                 <div class="product-list">
                     <?php
                         $productList = $Product->getFeaturedProducts(10);
@@ -84,7 +84,7 @@
         </div>
         <div class="featured-container">
             <div class="container">
-                <h2 class="title">BestSeller Products</h2>
+                <h2 class="title">Sản phẩm bán chạy</h2>
                 <div class="product-list">
                     <?php
                         $productList = $Product->getBestSellerProducts(10);

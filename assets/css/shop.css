@@ -423,17 +423,27 @@ form button[type="submit"]:hover {
 .item-checkbox label{
   width: 80px;
   height: 40px;
-  border: 2px solid white;
-  color: white;
-  background-color: black;
+  border: 1px solid black;
+  border-radius: 5%;
+  color: var(----text-color);
+  /* background-color: black; */
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px;
+  margin-left: 12px;
   cursor: pointer;
   transition: .3s ease-in-out;
 }
+.item-checkbox label:hover{
+  border: none;
+  /* border: 1px solid black; */
+  background-color: var(--hover);
+  color: white;
+}
+
 .item-checkbox input:checked~label {
+  border: none;
   color: white;
   background-color: var(--primary-color);
 }

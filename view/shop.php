@@ -23,7 +23,7 @@
 ?>
 
 <div class="banner">
-  <h3 class="title">SHOP</h3>
+  <h3 class="title">Cửa hàng</h3>
 </div>
 <div class="container-shop">
   <form action="#" method="post" class="container-shop-left">
