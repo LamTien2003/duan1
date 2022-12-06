@@ -26,33 +26,34 @@
         <div class="footer-title">Danh mục</div>
         <div class="footer-accounts">
           <ul>
-           <li><a href="" class="ft-ac-link">My Account</a></li>
+           <li><a href="" class="ft-ac-link">Tài khoản của tôi</a></li>
 
-           <li><a href="" class="ft-ac-link">My Wishlist</a></li>
+           <li><a href="" class="ft-ac-link">
+Sản phẩm yêu thích</a></li>
 
-           <li><a href="" class="ft-ac-link">My Cart</a></li>
+           <li><a href="" class="ft-ac-link">Giỏ hàng</a></li>
 
-           <li><a href="" class="ft-ac-link">Sign In</a></li>
+           <li><a href="" class="ft-ac-link">Đăng nhập</a></li>
 
-           <li><a href="" class="ft-ac-link">Check out</a></li>
+           <li><a href="" class="ft-ac-link">Thanh toán</a></li>
           </ul>
         </div>
       </div>
 
       <div class="single-footer">
-        <div class="footer-title">SHIPPING</div>
+        <div class="footer-title">Vận chuyển</div>
         <div class="footer-shipping">
           <ul>
            <li><a href="" class="ft-ac-link"
-        >New Products</a></li>
+        >Sản phẩm mới</a></li>
 
-           <li><a href="" class="ft-ac-link">Top Sellers</a></li>
+           <li><a href="" class="ft-ac-link">Khuyến mãi</a></li>
 
-           <li><a href="" class="ft-ac-link">Manufacturers</a></li>
+           <li><a href="" class="ft-ac-link">Sản phẩm đặc biệt</a></li>
+           <li><a href="" class="ft-ac-link">Nhà sản xuất</a></li>
 
-           <li><a href="" class="ft-ac-link">Suppliers</a></li>
+           <li><a href="" class="ft-ac-link">Nhà cung cấp</a></li>
 
-           <li><a href="" class="ft-ac-link">Specials</a></li>
           </ul>
         </div>
       </div>
@@ -62,12 +63,12 @@
       <div class="single-footer">
         <div class="footer-title">nhận tin tức từ chúng tôi?</div>
         <div class="footer-subscribe">
-          <form action="#">
-            <input type="text" name="email" placeholder="Địa chỉ Email ...">
-            <button class="btn-subscribe" type="submit">
-                Đăng ký
-            </button>
-          </form>
+        <div class="social-footer">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-behance-square"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
         </div>
       </div>
     </footer>

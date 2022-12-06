@@ -262,6 +262,8 @@ $Category = new Category();
           }
           ?>
         </a>
+      
+      
         <?php
         if (Session::getValueSession('user')) {
           $id_user = Session::getValueSession('user');
