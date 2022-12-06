@@ -26,21 +26,22 @@
         <div class="footer-title">Danh mục</div>
         <div class="footer-accounts">
           <ul>
-           <li><a href="" class="ft-ac-link">My Account</a></li>
+           <li><a href="" class="ft-ac-link">Tài khoản của tôi</a></li>
 
-           <li><a href="" class="ft-ac-link">My Wishlist</a></li>
+           <li><a href="" class="ft-ac-link">
+Sản phẩm yêu thích</a></li>
 
-           <li><a href="" class="ft-ac-link">My Cart</a></li>
+           <li><a href="" class="ft-ac-link">Giỏ hàng</a></li>
 
-           <li><a href="" class="ft-ac-link">Sign In</a></li>
+           <li><a href="" class="ft-ac-link">Đăng nhập</a></li>
 
-           <li><a href="" class="ft-ac-link">Check out</a></li>
+           <li><a href="" class="ft-ac-link">Thanh toán</a></li>
           </ul>
         </div>
       </div>
 
       <div class="single-footer">
-        <div class="footer-title">SHIPPING</div>
+        <div class="footer-title">Vận chuyển</div>
         <div class="footer-shipping">
           <ul>
            <li><a href="" class="ft-ac-link"
