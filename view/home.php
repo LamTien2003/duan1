@@ -60,16 +60,15 @@ $Product = new Product();
                 </div>
             </div>
         </div>
-    </div>
-    <div class="featured-container">
-        <div class="container">
-            <h2 class="title">Featured Products</h2>
-            <div class="product-list">
-                <?php
-                $productList = $Product->getFeaturedProducts(10);
-                foreach ($productList as $item) {
-                ?>
-                    <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">
+        <div class="featured-container">
+            <div class="container">
+                <h2 class="title">Sản phẩm nổi bật</h2>
+                <div class="product-list">
+                    <?php
+                        $productList = $Product->getFeaturedProducts(10);
+                        foreach($productList as $item) {                       
+                    ?>
+                        <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">
                         <img src="<?php echo $item['img_product'] ?>" alt="">
                         <div class="product-info">
                             <p class="product-name"><?php echo $item['title_product'] ?></p>
@@ -85,16 +84,15 @@ $Product = new Product();
                 ?>
             </div>
         </div>
-    </div>
-    <div class="featured-container">
-        <div class="container">
-            <h2 class="title">BestSeller Products</h2>
-            <div class="product-list">
-                <?php
-                $productList = $Product->getBestSellerProducts(10);
-                foreach ($productList as $item) {
-                ?>
-                    <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">
+        <div class="featured-container">
+            <div class="container">
+                <h2 class="title">Sản phẩm bán chạy</h2>
+                <div class="product-list">
+                    <?php
+                        $productList = $Product->getBestSellerProducts(10);
+                        foreach($productList as $item) {                       
+                    ?>
+                        <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">
                         <img src="<?php echo $item['img_product'] ?>" alt="">
                         <div class="product-info">
                             <p class="product-name"><?php echo $item['title_product'] ?></p>
