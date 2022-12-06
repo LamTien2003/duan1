@@ -1,7 +1,7 @@
 body {
   background-color: var(--bg-main);
 }
-header{
+header {
   background-color: var(--third-color);
 }
 .banner {
@@ -9,6 +9,7 @@ header{
   background: rgba(0, 0, 0, 0) url(../images/banner\ about.webp) no-repeat
     scroll center center/cover;
   padding-top: 20%;
+  margin-top: 90px;
 }
 .banner::before {
   background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
@@ -163,15 +164,13 @@ header{
 .container-shop-right {
   flex: 1;
 }
-.container-item{
+.container-item {
   background-color: var(--third-color);
-  
 }
-.container-item:not(:last-child){
+.container-item:not(:last-child) {
   margin-bottom: 3rem;
 }
 /* Search */
-
 
 .container-search {
   display: flex;
@@ -179,7 +178,6 @@ header{
   margin-bottom: 12px;
 }
 .container-search form {
-
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
@@ -210,7 +208,6 @@ form button[type="submit"] {
 
 form button[type="submit"]:hover {
   color: var(--primary-color);
-  
 }
 
 /* CATEGORIES */
@@ -248,7 +245,7 @@ form button[type="submit"]:hover {
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
-.categorie a:hover{
+.categorie a:hover {
   color: var(--primary-color);
 }
 
@@ -270,35 +267,33 @@ form button[type="submit"]:hover {
   color: var(--text-color);
   transition: all linear 0.3s;
 }
-.list-size .size a:hover{
+.list-size .size a:hover {
   color: var(--third-color);
   background-color: var(--primary-color);
 }
 
-
-.container-best-brand{
+.container-best-brand {
   padding: 15px;
-  
 }
 
-
 /* FILTER */
-.container-filter{
+.container-filter {
   display: flex;
   flex-direction: column;
 }
-.price-amount{
+.price-amount {
   padding: 20px 30px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.price-amount h5,.price-amount span{
+.price-amount h5,
+.price-amount span {
   font-size: 1.4rem;
 }
 
-.price-amount span{
+.price-amount span {
   color: var(--text-color);
   font-weight: 300;
 }
@@ -307,104 +302,102 @@ form button[type="submit"]:hover {
 
 .range {
   width: 100%;
-    -webkit-appearance: none;
-    vertical-align: middle;
-    outline: none;
-    border: none;
-    padding: 0;
-    background: none;
-  }
-  
-  .range::-webkit-slider-runnable-track {
-    background-color: #d7dbdd;
-    height: 6px;
-    border-radius: 3px;
-    border: 1px solid transparent;
-  }
-  
-  .range::-moz-range-track {
-    background-color: #d7dbdd;
-    height: 6px;
-    border-radius: 3px;
-    border: none;
-  }
-  
-  .range::-ms-track {
-    color: transparent;
-    border: none;
-    background: none;
-    height: 6px;
-  }
-  
-  .range::-ms-fill-lower { 
-    background-color: #d7dbdd;
-    border-radius: 3px;
-  }
-  
-  .range::-ms-fill-upper { 
-    background-color: #d7dbdd;
-    border-radius: 3px;
-  }
-  
-  .range::-moz-range-thumb {
-    border-radius: 20px;
-    height: 18px;
-    width: 18px;
-    border: none;
-    background: none;
-    background-color: #606670;
-  }
-  
-  .range:active::-moz-range-thumb {
-    outline: none;
-  }
-  
-  .range::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
-    border-radius: 100%;
-    background-color: #606670;
-    height: 18px;
-    width: 18px;
-    margin-top: -7px;
-  }
-  
-  
-  
-  .range:active::-webkit-slider-thumb {
-    outline: none;
-  }
-  
-  .range::-ms-thumb { 
-    border-radius: 100%;
-    background-color: #606670;
-    height: 18px;
-    width: 18px; 
-    border: none;
-  }
-  
-  .range:active::-ms-thumb {
-    border: none;
-  }
-  .details .fillter button {
-    cursor: pointer;
-    background-color: #ededed;
-    width: auto;
-    height: auto;
-    line-height: 20px;
-  }
-  output {
-    border: 1px solid #d7dbdd;
-    color: #333;
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    margin: 6px 0;
-    padding: .4em .6em;
-    border-radius: 3px;
-  }
+  -webkit-appearance: none;
+  vertical-align: middle;
+  outline: none;
+  border: none;
+  padding: 0;
+  background: none;
+}
 
-  .price-fillter {
-    display: flex;
-    justify-content: space-between;
+.range::-webkit-slider-runnable-track {
+  background-color: #d7dbdd;
+  height: 6px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.range::-moz-range-track {
+  background-color: #d7dbdd;
+  height: 6px;
+  border-radius: 3px;
+  border: none;
+}
+
+.range::-ms-track {
+  color: transparent;
+  border: none;
+  background: none;
+  height: 6px;
+}
+
+.range::-ms-fill-lower {
+  background-color: #d7dbdd;
+  border-radius: 3px;
+}
+
+.range::-ms-fill-upper {
+  background-color: #d7dbdd;
+  border-radius: 3px;
+}
+
+.range::-moz-range-thumb {
+  border-radius: 20px;
+  height: 18px;
+  width: 18px;
+  border: none;
+  background: none;
+  background-color: #606670;
+}
+
+.range:active::-moz-range-thumb {
+  outline: none;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  border-radius: 100%;
+  background-color: #606670;
+  height: 18px;
+  width: 18px;
+  margin-top: -7px;
+}
+
+.range:active::-webkit-slider-thumb {
+  outline: none;
+}
+
+.range::-ms-thumb {
+  border-radius: 100%;
+  background-color: #606670;
+  height: 18px;
+  width: 18px;
+  border: none;
+}
+
+.range:active::-ms-thumb {
+  border: none;
+}
+.details .fillter button {
+  cursor: pointer;
+  background-color: #ededed;
+  width: auto;
+  height: auto;
+  line-height: 20px;
+}
+output {
+  border: 1px solid #d7dbdd;
+  color: #333;
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  margin: 6px 0;
+  padding: 0.4em 0.6em;
+  border-radius: 3px;
+}
+
+.price-fillter {
+  display: flex;
+  justify-content: space-between;
 }
 .fillter {
   margin: 10px 0 0 0;
@@ -417,10 +410,10 @@ form button[type="submit"]:hover {
 .item-checkbox {
   width: 33%;
 }
-.item-checkbox input  {
+.item-checkbox input {
   display: none;
 }
-.item-checkbox label{
+.item-checkbox label {
   width: 80px;
   height: 40px;
   border: 1px solid black;
@@ -433,18 +426,17 @@ form button[type="submit"]:hover {
   margin: 5px;
   margin-left: 12px;
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.item-checkbox label:hover{
+.item-checkbox label:hover {
   border: none;
   /* border: 1px solid black; */
   background-color: var(--hover);
   color: white;
 }
 
-.item-checkbox input:checked~label {
+.item-checkbox input:checked ~ label {
   border: none;
   color: white;
   background-color: var(--primary-color);
 }
-  

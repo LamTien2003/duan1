@@ -22,6 +22,8 @@ div {
 
 .heading-banner {
     background: rgba(0, 0, 0, 0) url(https://template.hasthemes.com/hurst-v1/hurst/img/bg/1.jpg) no-repeat scroll center center/cover;
+    margin-top: 90px;
+    
 }
 
 .container {

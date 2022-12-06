@@ -4,7 +4,7 @@
 
 footer{
     display: flex;
-    padding: 120px 160px ;
+    padding: 70px 160px ;
     justify-content: space-between;
     background-color: var(--bg-footer);
   }
@@ -71,14 +71,14 @@ footer{
   }
    
   
-  
+/*   
   .footer-subscribe form{
     display: flex;
     flex-direction: column;
   
-  }
+  } */
   
-  .footer-subscribe input[type=text]{
+  /* .footer-subscribe input[type=text]{
     background: #f6f6f6 none repeat scroll 0 0;
     border: medium none;
     box-shadow: none;
@@ -90,9 +90,9 @@ footer{
     width: 100%;
     outline: none;
     font-size: 1.4rem;
-  }
+  } */
   
-  .footer-subscribe button[type=submit]{
+  /* .footer-subscribe button[type=submit]{
     background: #f6f6f6 none repeat scroll 0 0;
     border: medium none;
     box-shadow: none;
@@ -111,7 +111,7 @@ footer{
   .footer-subscribe button[type=submit]:hover{
     background-color: var(--primary-color);
     color: var(--third-color);
-  }
+  } */
 
   .social-footer i{
     margin: auto;
