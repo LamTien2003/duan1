@@ -6,6 +6,7 @@
   $DetailProduct = new DetailProduct();
   $Category = new Category();
   $arrayIdCategory = [];
+  $searchName = "";
   if(isset($_GET['page'])) {
     $page = $_GET['page'];
   }else {
@@ -20,6 +21,9 @@
       $id_category = 0;
     }
   }
+  if(isset($_POST['searchName']) && $_POST['searchName']) {
+    $searchName = $_POST['searchName'];
+  }
 ?>
 
 <div class="banner">
@@ -29,8 +33,15 @@
   <form action="#" method="post" class="container-shop-left">
     <form class="container-item">
       <div class="container-search">
-          <input type="text" name="search" id="search-product-homepage" placeholder="Tìm kiếm tại đây...."
-          onchange="fetchAjaxHomePage()" />
+          <input 
+            type="text" 
+            name="search" 
+            id="search-product-homepage" 
+            placeholder="Tìm kiếm tại đây...." 
+            onchange="fetchAjaxHomePage()" 
+            value = "<?php echo $searchName ? $searchName : '' ?>"
+          />
+          
           <button type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -151,10 +162,10 @@
     <div class="product-list-shop" id="result">
       <?php
           $productPerPage = 9;
-          $countProducts = $Product->getCountProductsByCategory($arrayIdCategory);
+          $countProducts = $Product->getCountProductsByCategory($arrayIdCategory,$searchName);
           $countPage = ceil($countProducts / $productPerPage);
           $start = ($page -1) * $productPerPage;
-          $productList = $Product->getProductsByCategory($arrayIdCategory,$productPerPage);
+          $productList = $Product->getProductsByCategory($arrayIdCategory,$productPerPage,$searchName);
           foreach($productList as $item) {                       
       ?>
         <a href="index.php?quanly=chitiet&id=<?php echo $item['id_product'] ?>" class="product-item">

@@ -1,8 +1,10 @@
 <?php
 include_once('./model/user.classes.php');
 include_once('./model/category.classes.php');
+include_once('./model/cart.classes.php');
 $User = new User();
 $Category = new Category();
+$Cart = new Cart();
 ?>
 <header>
   <!-- Begin Sub-Header -->
@@ -189,7 +191,15 @@ $Category = new Category();
             <!-- Cart Layout -->
             <div class="header-cart">
               <div class="header-cart-wrap">
-                <i class="fa-solid fa-cart-shopping" ><p class="numProCart">1</p></i>
+                <i class="fa-solid fa-cart-shopping" >
+                <?php 
+                  if(Session::getValueSession('user')) {
+                    $count = count($Cart->getCartOfUser(Session::getValueSession('user')));
+                    echo "<p class='numProCart'> $count </p>";
+                  }             
+                ?>
+                  
+                </i>
                 <span class="header-cart-notice"></span>
                 <!-- No cart: header-cart-list_no-cart -->
                 <!-- <div class="header-cart-list">
@@ -241,12 +251,12 @@ $Category = new Category();
 
 
       <div class="icon">
-        <div class="search-btn">
+        <form action="index.php?quanly=cuahang" method = "POST" class="search-btn">
           <a href="#" class="menu_link"><i class="fa-solid fa-magnifying-glass"></i></a>
           <div class="search-txt">
-            <input type="text" placeholder="Search..." />
+            <input name="searchName" type="text" placeholder="Nhập tên sản phẩm" />
           </div>
-        </div>
+        </form>
       </div>
       <div class="icon icon-user">
         <a href="index.php?quanly=<?php echo Session::getValueSession('user') ? 'user' : 'login' ?>" class="menu_link <?php echo Session::getValueSession('user') ? 'login-success' : '' ?>">

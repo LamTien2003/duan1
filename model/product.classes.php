@@ -34,7 +34,7 @@ class Product extends DB {
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
-    public function getProductsByCategory($listIDCategory,$limit) {
+    public function getProductsByCategory($listIDCategory,$limit,$name) {
         $condition = "HAVING ";
         if(count($listIDCategory) > 1 ) {
             for($i = 0; $i < count($listIDCategory) ; $i++) {
@@ -49,12 +49,13 @@ class Product extends DB {
         }else {
             $condition .= "1";
         }
+        $condition .=" AND title_product LIKE '%$name%'";
         $condition .= " LIMIT $limit";
         $sql = "Select * from product INNER JOIN detailproduct ON product.id_product = detailproduct.id_product GROUP BY product.id_product $condition";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
-    public function getCountProductsByCategory($listIDCategory) {
+    public function getCountProductsByCategory($listIDCategory,$name) {
         $condition = "WHERE ";
         if(count($listIDCategory) > 1 ) {
             for($i = 0; $i < count($listIDCategory) ; $i++) {
@@ -69,7 +70,7 @@ class Product extends DB {
         }else {
             $condition .= "1";
         }
-
+        $condition .=" AND title_product LIKE '%$name%'";
         $sql = "Select * from product $condition";
         $stmt = $this->connect()->query($sql);
         return $stmt->rowCount();
