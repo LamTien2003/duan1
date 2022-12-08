@@ -169,11 +169,5 @@
 
     }
     setPrice();
-    const form = document.querySelector('form[name="myForm"]')
-    form.addEventListener('submit', (e) => {
-        if(!getCookie('user')) {
-            e.preventDefault()
-            window.location.href = 'index.php?quanly=login'
-        }
-    })
+    
 </script>

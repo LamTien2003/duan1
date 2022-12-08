@@ -1,5 +1,5 @@
 <?php
-    include_once('./model/Bill.classes.php');
+    include_once('./model/bill.classes.php');
     if(isset($_GET['page'])) {
         $page = $_GET['page'];
     }else {

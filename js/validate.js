@@ -1,12 +1,12 @@
 const listForm = document.querySelectorAll('.form-group')
-const btn = document.querySelector('form:not(.search-input)')
-
+const btn = document.querySelector('form:not(.search-btn)')
+console.log(btn);
 // Chưa click btn thì không hiện lỗi
 let isClick = false;
 
 validate()
 btn.addEventListener('submit',(e)=> {
-    
+    console.log("submit nè")
     isClick = true
     let status = validate()
     if(status) {
