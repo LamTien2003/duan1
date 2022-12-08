@@ -3,12 +3,12 @@
 class User extends DB {
 
     public function getUsers() {
-        $sql = "Select * from User";
+        $sql = "Select * from user";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
     public function getUserId($id) {
-        $sql = "Select * from User WHERE id_user = $id";
+        $sql = "Select * from user WHERE id_user = $id";
         $stmt = $this->connect()->query($sql);
         return $stmt->fetchAll();
     }
@@ -82,8 +82,8 @@ class User extends DB {
     }
     public function searchUser($name,$page,$limit) {
         $start = ($page -1) * $limit;
-        $sql = "Select * from User WHERE user_name LIKE '%$name%' OR id_user = '$name' ";
-        $sqlResult = "Select * from User WHERE user_name LIKE '%$name%' OR id_user = '$name' LIMIT $start,$limit";
+        $sql = "Select * from user WHERE user_name LIKE '%$name%' OR id_user = '$name' ";
+        $sqlResult = "Select * from user WHERE user_name LIKE '%$name%' OR id_user = '$name' LIMIT $start,$limit";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         $countTotalUser = $stmt->rowCount();
@@ -94,7 +94,7 @@ class User extends DB {
     }
     public function checkUserForgetPassword($userName,$email) {
         $isCheck = false;
-        $sql = "Select * from User WHERE accountName_user = '$userName' AND user_email = '$email'";
+        $sql = "Select * from user WHERE accountName_user = '$userName' AND user_email = '$email'";
         $stmt = $this->connect()->query($sql);
         $user = $stmt->fetchAll();
         if($stmt->rowCount() >= 1) {
